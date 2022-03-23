@@ -23,6 +23,11 @@ namespace StarterAssets
             starterAssetsInputs.JumpInput(virtualJumpState);
         }
 
+        public void VirtualAttackInput(bool virtualAttackState)
+        {
+            starterAssetsInputs.AttackInput(virtualAttackState);
+        }
+
         public void VirtualSprintInput(bool virtualSprintState)
         {
             starterAssetsInputs.SprintInput(virtualSprintState);
