@@ -122,7 +122,7 @@ namespace StarterAssets
 		{
 			_hasAnimator = TryGetComponent(out _animator);
 			
-			JumpAndGravity();
+			//JumpAndGravity();
 			GroundedCheck();
 			Move();
 			Attack();
@@ -236,6 +236,7 @@ namespace StarterAssets
 			}
 		}
 
+		/*
 		private void JumpAndGravity()
 		{
 			if (Grounded)
@@ -304,7 +305,7 @@ namespace StarterAssets
 				_verticalVelocity += Gravity * Time.deltaTime;
 			}
 		}
-
+		*/
 		public void Attack()
 		{
 			if (_input.attack)
