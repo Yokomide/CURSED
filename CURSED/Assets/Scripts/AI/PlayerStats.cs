@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats
 {
+    public HealthBar healthBar;
     void Start()
     {
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     private int SetMaxHealthFromHealthLevel()
@@ -19,5 +21,14 @@ public class PlayerStats : CharacterStats
     public void TakeDamage(int damage)
     {
         currentHealth = currentHealth - damage;
+
+        healthBar.SetCurrentHealth(currentHealth);
+
+
+        if (currentHealth <= 0 )
+        {
+            currentHealth = 0;
+            //player dead animation
+        }
     }
 }

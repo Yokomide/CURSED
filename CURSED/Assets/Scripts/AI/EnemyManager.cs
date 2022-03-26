@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyManager : CharacterManager
 {
     EnemyLocomotionManager enemyLocomotionManager;
-    bool isPreformingAction;
+    public bool isPreformingAction;
     [Header("A.I. Settings")]
     public float detectionRadius = 10;
     public float maximumDetectionAngle = 50;
@@ -16,6 +16,10 @@ public class EnemyManager : CharacterManager
     }
     private void Update() 
     {
+        
+    }
+    private void FixedUpdate() 
+    {
         HandleCurrentAction();
     }
 
@@ -24,6 +28,10 @@ public class EnemyManager : CharacterManager
         if(enemyLocomotionManager.currentTarget == null)
         {
             enemyLocomotionManager.HandleDetection();
+        }
+        else
+        {
+            enemyLocomotionManager.HandleMoveToTarget();
         }
     }
 }
