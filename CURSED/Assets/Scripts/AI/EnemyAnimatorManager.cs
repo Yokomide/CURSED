@@ -11,7 +11,7 @@ public class EnemyAnimatorManager : AnimatorManager
         enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
     }
 
-    private  void OnAnimatorMove() 
+    private void OnAnimatorMove() 
     {
         float delta = Time.deltaTime;
         enemyLocomotionManager.enemyRigidBody.drag = 0;
