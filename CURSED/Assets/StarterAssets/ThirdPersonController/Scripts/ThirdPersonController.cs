@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
 
-namespace StarterAssets
+namespace MainHero
 {
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -125,7 +125,6 @@ namespace StarterAssets
 			//JumpAndGravity();
 			GroundedCheck();
 			Move();
-			Attack();
 		}
 
 		private void LateUpdate()
@@ -231,7 +230,7 @@ namespace StarterAssets
 			// update animator if using character
 			if (_hasAnimator)
 			{
-				_animator.SetFloat(_animIDSpeed, Mathf.Clamp(_animationBlend, 0f, 2.5f));
+				_animator.SetFloat(_animIDSpeed, Mathf.Clamp(_animationBlend, 0f, 1.7f));
 				_animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
 			}
 		}
@@ -306,14 +305,14 @@ namespace StarterAssets
 			}
 		}
 		*/
-		public void Attack()
+		public void PlayTargetAnimation(string targetAnim, bool isInteracting)
 		{
-			if (_input.attack)
-			{
+			//if (_input.attack)
+			//{
 				_animator.SetBool("isInteracting", true);
 				_animator.applyRootMotion = true;
 				_animator.CrossFade("Attack", 0.2f);
-			}
+			//}
 		}
 
 

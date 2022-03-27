@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 #endif
 
-namespace StarterAssets
+namespace MainHero
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
