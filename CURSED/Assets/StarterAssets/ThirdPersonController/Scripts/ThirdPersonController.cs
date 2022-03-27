@@ -47,6 +47,9 @@ namespace StarterAssets
 		[Tooltip("What layers the character uses as ground")]
 		public LayerMask GroundLayers;
 
+		[Space(10)]
+		public float AttackTimeout = 0.50f;
+
 		[Header("Cinemachine")]
 		[Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
 		public GameObject CinemachineCameraTarget;
@@ -74,6 +77,7 @@ namespace StarterAssets
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
+		private float _attackTimeoutDelta;
 
 		// animation IDs
 		private int _animIDSpeed;
@@ -81,6 +85,7 @@ namespace StarterAssets
 		private int _animIDJump;
 		private int _animIDFreeFall;
 		private int _animIDMotionSpeed;
+		private int _animIDAttack;
 
 		private Animator _animator;
 		private CharacterController _controller;
@@ -117,9 +122,10 @@ namespace StarterAssets
 		{
 			_hasAnimator = TryGetComponent(out _animator);
 			
-			JumpAndGravity();
+			//JumpAndGravity();
 			GroundedCheck();
 			Move();
+			Attack();
 		}
 
 		private void LateUpdate()
@@ -134,6 +140,7 @@ namespace StarterAssets
 			_animIDJump = Animator.StringToHash("Jump");
 			_animIDFreeFall = Animator.StringToHash("FreeFall");
 			_animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+			_animIDAttack = Animator.StringToHash("Attack");
 		}
 
 		private void GroundedCheck()
@@ -168,6 +175,7 @@ namespace StarterAssets
 
 		private void Move()
 		{
+
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -175,6 +183,7 @@ namespace StarterAssets
 
 			// note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
 			// if there is no input, set the target speed to 0
+			
 			if (_input.move == Vector2.zero) targetSpeed = 0.0f;
 
 			// a reference to the players current horizontal velocity
@@ -188,7 +197,7 @@ namespace StarterAssets
 			{
 				// creates curved result rather than a linear one giving a more organic speed change
 				// note T in Lerp is clamped, so we don't need to clamp our speed
-				_speed = Mathf.Lerp(currentHorizontalSpeed, targetSpeed * inputMagnitude, Time.deltaTime * SpeedChangeRate);
+				_speed = Mathf.Lerp(currentHorizontalSpeed,  inputMagnitude, Time.deltaTime * SpeedChangeRate);
 
 				// round speed to 3 decimal places
 				_speed = Mathf.Round(_speed * 1000f) / 1000f;
@@ -197,7 +206,7 @@ namespace StarterAssets
 			{
 				_speed = targetSpeed;
 			}
-			_animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime * SpeedChangeRate);
+			_animationBlend = Mathf.Lerp(_animationBlend, inputMagnitude*targetSpeed, Time.deltaTime * SpeedChangeRate);
 
 			// normalise input direction
 			Vector3 inputDirection = new Vector3(_input.move.x, 0.0f, _input.move.y).normalized;
@@ -222,11 +231,12 @@ namespace StarterAssets
 			// update animator if using character
 			if (_hasAnimator)
 			{
-				_animator.SetFloat(_animIDSpeed, _animationBlend);
+				_animator.SetFloat(_animIDSpeed, Mathf.Clamp(_animationBlend, 0f, 2.5f));
 				_animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
 			}
 		}
 
+		/*
 		private void JumpAndGravity()
 		{
 			if (Grounded)
@@ -295,8 +305,19 @@ namespace StarterAssets
 				_verticalVelocity += Gravity * Time.deltaTime;
 			}
 		}
+		*/
+		public void Attack()
+		{
+			if (_input.attack)
+			{
+				_animator.SetBool("isInteracting", true);
+				_animator.applyRootMotion = true;
+				_animator.CrossFade("Attack", 0.2f);
+			}
+		}
 
-		private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
+
+	private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
 			if (lfAngle < -360f) lfAngle += 360f;
 			if (lfAngle > 360f) lfAngle -= 360f;

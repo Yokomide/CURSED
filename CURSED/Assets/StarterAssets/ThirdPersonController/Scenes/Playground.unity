@@ -772,6 +772,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 135756642000475821, guid: 64dce48905ffd9b4293e595fa6941544,
         type: 3}
+      propertyPath: analogMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 135756642000475821, guid: 64dce48905ffd9b4293e595fa6941544,
+        type: 3}
       propertyPath: cursorInputForLook
       value: 0
       objectReference: {fileID: 0}
@@ -850,6 +855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UIInputModule
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982812146204527121, guid: 64dce48905ffd9b4293e595fa6941544,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
