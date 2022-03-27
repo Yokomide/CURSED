@@ -7,7 +7,7 @@ TagManager:
   - CinemachineTarget
   - Enemy
   - Item
-  - Weapon
+  - Hittable
   layers:
   - Default
   - TransparentFX
@@ -17,7 +17,7 @@ TagManager:
   - UI
   - Object
   - Player
-  - 
+  - Enemy
   - 
   - 
   - 
