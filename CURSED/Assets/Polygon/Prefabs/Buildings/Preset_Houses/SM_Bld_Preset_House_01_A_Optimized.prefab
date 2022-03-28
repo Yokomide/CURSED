@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 23051325257252386}
   - component: {fileID: 3373591897732270042}
   - component: {fileID: 7219938065846661416}
+  - component: {fileID: 2578454995137977465}
   m_Layer: 0
   m_Name: SM_Bld_Preset_House_01_A_Optimized
   m_TagString: Untagged
@@ -93,7 +94,7 @@ BoxCollider:
   m_GameObject: {fileID: 1159825550740384}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 8.579231, y: 13.489724, z: 3.5041876}
   m_Center: {x: -1.1776948, y: 4.232779, z: -3.7136788}
@@ -108,8 +109,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.726752, y: 13.489724, z: 3.774137}
-  m_Center: {x: -2.5213335, y: 4.232779, z: -0.13274264}
+  m_Size: {x: 5.726752, y: 13.489724, z: 1.993291}
+  m_Center: {x: -2.5213335, y: 4.232779, z: -1.0231657}
+--- !u!65 &2578454995137977465
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159825550740384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5986109, y: 3.769128, z: 1.69918}
+  m_Center: {x: -3.1940908, y: -0.62752044, z: 0.8019301}
 --- !u!1 &1399413960509414
 GameObject:
   m_ObjectHideFlags: 0

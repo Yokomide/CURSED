@@ -155,6 +155,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.DefaultCompany.CURSED
+    Standalone: com.DefaultCompany.CURSED
   buildNumber:
     Standalone: 0
     iPhone: 0

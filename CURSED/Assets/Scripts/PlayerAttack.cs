@@ -15,10 +15,6 @@ public class PlayerAttack : MonoBehaviour
 
        // GameEvents.current.onAttackStart += Attack;
     }
-    private void Awake()
-    {
-
-    }
 
     public void HandleLightAttack(WeaponItem weapon)
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Items/Weapon Item")]
-public class WeaponItem : MonoBehaviour
+public class WeaponItem : Item
 {
     public GameObject modelPrefab;
     public bool isUnarmed;
@@ -13,3 +13,4 @@ public class WeaponItem : MonoBehaviour
     public string OH_Heavy_Attack_1;
    
 }
+    

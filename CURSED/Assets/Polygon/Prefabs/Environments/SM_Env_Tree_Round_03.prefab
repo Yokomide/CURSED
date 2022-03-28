@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4778827360843316
 Transform:
@@ -93,5 +93,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.67874146, y: 2.9913597, z: 3.8583295}
-  m_Center: {x: 0.02696991, y: 1.361248, z: -0.089479804}
+  m_Size: {x: 0.67874146, y: 2.9913597, z: 0.80444014}
+  m_Center: {x: 0.02696991, y: 1.361248, z: 0.033955023}
