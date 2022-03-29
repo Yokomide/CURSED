@@ -1602,8 +1602,8 @@ GameObject:
   - component: {fileID: 5616863979881219106}
   - component: {fileID: 5616863979881219105}
   - component: {fileID: 5616863979881219110}
-  - component: {fileID: 5616863979881219128}
   - component: {fileID: 5616863979881219111}
+  - component: {fileID: 5786612880312340148}
   m_Layer: 8
   m_Name: Skeleton1
   m_TagString: Enemy
@@ -1620,7 +1620,7 @@ Transform:
   m_GameObject: {fileID: 5616863979881219104}
   m_LocalRotation: {x: -0, y: 0.85532147, z: -0, w: 0.51809764}
   m_LocalPosition: {x: 0.95, y: 2.666, z: 1.83}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 5616863979881423472}
   - {fileID: 5616863979881391624}
@@ -1716,24 +1716,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 5616863979873952768}
---- !u!114 &5616863979881219128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5616863979881219104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c0c43d0e0131074fa0fd26d1eb3dd0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthLevel: 10
-  maxHealth: 0
-  currentHealth: 0
-  staminaLevel: 10
-  maxStamina: 0
-  currentStamina: 0
 --- !u!136 &5616863979881219111
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1748,6 +1730,26 @@ CapsuleCollider:
   m_Height: 1.7940545
   m_Direction: 1
   m_Center: {x: 0, y: 0.8947172, z: 0}
+--- !u!114 &5786612880312340148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616863979881219104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a4cafc2cd76e6479ccccc9937b0635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthLevel: 10
+  maxHealth: 0
+  currentHealth: 0
+  staminaLevel: 10
+  maxStamina: 0
+  currentStamina: 0
+  healthBar: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &5616863979881220542
 GameObject:
   m_ObjectHideFlags: 0

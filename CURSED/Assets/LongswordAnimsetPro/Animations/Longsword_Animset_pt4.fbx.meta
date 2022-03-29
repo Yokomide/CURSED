@@ -1,314 +1,914 @@
 fileFormatVersion: 2
 guid: c5937c944a220444aa33be3fe1480174
-timeCreated: 1490889342
-licenseType: Store
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: DummyMESH
-    100002: Head
-    100004: Hips
-    100006: LeftArm
-    100008: LeftArmRoll
-    100010: LeftFoot
-    100012: LeftForeArm
-    100014: LeftForeArmRoll
-    100016: LeftHand
-    100018: LeftHandIndex1
-    100020: LeftHandIndex2
-    100022: LeftHandIndex3
-    100024: LeftHandIndex4
-    100026: LeftHandMiddle1
-    100028: LeftHandMiddle2
-    100030: LeftHandMiddle3
-    100032: LeftHandMiddle4
-    100034: LeftHandPinky1
-    100036: LeftHandPinky2
-    100038: LeftHandPinky3
-    100040: LeftHandPinky4
-    100042: LeftHandProp
-    100044: LeftHandRing1
-    100046: LeftHandRing2
-    100048: LeftHandRing3
-    100050: LeftHandRing4
-    100052: LeftHandThumb1
-    100054: LeftHandThumb2
-    100056: LeftHandThumb3
-    100058: LeftHandThumb4
-    100060: LeftLeg
-    100062: LeftLegRoll
-    100064: LeftShoulder
-    100066: LeftToeBase
-    100068: LeftToeBase_END
-    100070: LeftUpLeg
-    100072: LeftUpLegRoll
-    100074: //RootNode
-    100076: Neck
-    100078: RightArm
-    100080: RightArmRoll
-    100082: RightFoot
-    100084: RightForeArm
-    100086: RightForeArmRoll
-    100088: RightHand
-    100090: RightHandIndex1
-    100092: RightHandIndex2
-    100094: RightHandIndex3
-    100096: RightHandIndex4
-    100098: RightHandMiddle1
-    100100: RightHandMiddle2
-    100102: RightHandMiddle3
-    100104: RightHandMiddle4
-    100106: RightHandPinky1
-    100108: RightHandPinky2
-    100110: RightHandPinky3
-    100112: RightHandPinky4
-    100114: RightHandProp
-    100116: RightHandRing1
-    100118: RightHandRing2
-    100120: RightHandRing3
-    100122: RightHandRing4
-    100124: RightHandThumb1
-    100126: RightHandThumb2
-    100128: RightHandThumb3
-    100130: RightHandThumb4
-    100132: RightLeg
-    100134: RightLegRoll
-    100136: RightShoulder
-    100138: RightToeBase
-    100140: RightToeBase_END
-    100142: RightUpLeg
-    100144: RightUpLegRoll
-    100146: Root
-    100148: Spine
-    100150: Spine1
-    100152: Jaw
-    100154: Jaw_END
-    100156: LeftBrow1
-    100158: LeftBrow2
-    100160: LeftBrow3
-    100162: LeftCheek
-    100164: LeftCheek1
-    100166: LeftCheekMouth
-    100168: LeftCheekUp
-    100170: LeftCheekUp1
-    100172: LeftChin
-    100174: LeftEye
-    100176: LeftEyeLidDown
-    100178: LeftEyeLidUp
-    100180: LeftFrontSkirt1
-    100182: LeftFrontSkirt2
-    100184: LeftNostril
-    100186: LeftPauldron
-    100188: MouthCenterDown
-    100190: MouthCenterUp
-    100192: MouthLeftCorner
-    100194: MouthLeftDown
-    100196: MouthLeftDown1
-    100198: MouthLeftUp
-    100200: MouthLeftUp1
-    100202: MouthRightCorner
-    100204: MouthRightDown
-    100206: MouthRightDown1
-    100208: MouthRightUp
-    100210: MouthRightUp1
-    100212: RightBrow1
-    100214: RightBrow2
-    100216: RightBrow3
-    100218: RightCheek
-    100220: RightCheek1
-    100222: RightCheekMouth
-    100224: RightCheekUp
-    100226: RightCheekUp1
-    100228: RightChin
-    100230: RightEye
-    100232: RightEyeLidDown
-    100234: RightEyeLidUp
-    100236: RightFrontSkirt1
-    100238: RightFrontSkirt2
-    100240: RightNostril
-    100242: RightPauldron
-    100244: Tongue
-    100246: Tongue1
-    100248: Tongue2
-    100250: VampArmsLegsMESH_LOD0
-    100252: VampCapeMESH
-    100254: VampHeadMESH_LOD0
-    100256: VampTeethMESH_LOD0
-    100258: VampTorsoMESH_LOD0
-    400000: DummyMESH
-    400002: Head
-    400004: Hips
-    400006: LeftArm
-    400008: LeftArmRoll
-    400010: LeftFoot
-    400012: LeftForeArm
-    400014: LeftForeArmRoll
-    400016: LeftHand
-    400018: LeftHandIndex1
-    400020: LeftHandIndex2
-    400022: LeftHandIndex3
-    400024: LeftHandIndex4
-    400026: LeftHandMiddle1
-    400028: LeftHandMiddle2
-    400030: LeftHandMiddle3
-    400032: LeftHandMiddle4
-    400034: LeftHandPinky1
-    400036: LeftHandPinky2
-    400038: LeftHandPinky3
-    400040: LeftHandPinky4
-    400042: LeftHandProp
-    400044: LeftHandRing1
-    400046: LeftHandRing2
-    400048: LeftHandRing3
-    400050: LeftHandRing4
-    400052: LeftHandThumb1
-    400054: LeftHandThumb2
-    400056: LeftHandThumb3
-    400058: LeftHandThumb4
-    400060: LeftLeg
-    400062: LeftLegRoll
-    400064: LeftShoulder
-    400066: LeftToeBase
-    400068: LeftToeBase_END
-    400070: LeftUpLeg
-    400072: LeftUpLegRoll
-    400074: //RootNode
-    400076: Neck
-    400078: RightArm
-    400080: RightArmRoll
-    400082: RightFoot
-    400084: RightForeArm
-    400086: RightForeArmRoll
-    400088: RightHand
-    400090: RightHandIndex1
-    400092: RightHandIndex2
-    400094: RightHandIndex3
-    400096: RightHandIndex4
-    400098: RightHandMiddle1
-    400100: RightHandMiddle2
-    400102: RightHandMiddle3
-    400104: RightHandMiddle4
-    400106: RightHandPinky1
-    400108: RightHandPinky2
-    400110: RightHandPinky3
-    400112: RightHandPinky4
-    400114: RightHandProp
-    400116: RightHandRing1
-    400118: RightHandRing2
-    400120: RightHandRing3
-    400122: RightHandRing4
-    400124: RightHandThumb1
-    400126: RightHandThumb2
-    400128: RightHandThumb3
-    400130: RightHandThumb4
-    400132: RightLeg
-    400134: RightLegRoll
-    400136: RightShoulder
-    400138: RightToeBase
-    400140: RightToeBase_END
-    400142: RightUpLeg
-    400144: RightUpLegRoll
-    400146: Root
-    400148: Spine
-    400150: Spine1
-    400152: Jaw
-    400154: Jaw_END
-    400156: LeftBrow1
-    400158: LeftBrow2
-    400160: LeftBrow3
-    400162: LeftCheek
-    400164: LeftCheek1
-    400166: LeftCheekMouth
-    400168: LeftCheekUp
-    400170: LeftCheekUp1
-    400172: LeftChin
-    400174: LeftEye
-    400176: LeftEyeLidDown
-    400178: LeftEyeLidUp
-    400180: LeftFrontSkirt1
-    400182: LeftFrontSkirt2
-    400184: LeftNostril
-    400186: LeftPauldron
-    400188: MouthCenterDown
-    400190: MouthCenterUp
-    400192: MouthLeftCorner
-    400194: MouthLeftDown
-    400196: MouthLeftDown1
-    400198: MouthLeftUp
-    400200: MouthLeftUp1
-    400202: MouthRightCorner
-    400204: MouthRightDown
-    400206: MouthRightDown1
-    400208: MouthRightUp
-    400210: MouthRightUp1
-    400212: RightBrow1
-    400214: RightBrow2
-    400216: RightBrow3
-    400218: RightCheek
-    400220: RightCheek1
-    400222: RightCheekMouth
-    400224: RightCheekUp
-    400226: RightCheekUp1
-    400228: RightChin
-    400230: RightEye
-    400232: RightEyeLidDown
-    400234: RightEyeLidUp
-    400236: RightFrontSkirt1
-    400238: RightFrontSkirt2
-    400240: RightNostril
-    400242: RightPauldron
-    400244: Tongue
-    400246: Tongue1
-    400248: Tongue2
-    400250: VampArmsLegsMESH_LOD0
-    400252: VampCapeMESH
-    400254: VampHeadMESH_LOD0
-    400256: VampTeethMESH_LOD0
-    400258: VampTorsoMESH_LOD0
-    4300000: DummyMESH
-    4300002: VampTeethMESH_LOD0
-    4300004: VampTorsoMESH_LOD0
-    4300006: VampCapeMESH
-    4300008: VampArmsLegsMESH_LOD0
-    4300010: VampHeadMESH_LOD0
-    7400000: Longs_GetUpBack
-    7400002: Longs_KO_1
-    7400004: Longs_KO_2
-    7400006: Longs_KO_Air
-    7400008: Longs_KO_AirStrong
-    7400010: Longs_KO_Fall_Start
-    7400012: Longs_KO_Fall_End
-    7400014: Longs_SprintLoop
-    7400016: Longs_SprintStart
-    7400018: Longs_SprintStop_LU
-    7400020: Longs_SprintStop_RU
-    7400022: Longs_RollFwd
-    7400024: Longs_RollBwd
-    7400026: Longs_RollLeft
-    7400028: Longs_RollRight
-    7400030: Longs_OnGround_Hit
-    7400032: Longs_JumpAttack_R
-    7400034: Longs_JumpAttack_RD
-    7400036: Longs_JumpAttack_LD
-    7400038: Longs_BlockStart
-    7400040: Longs_BlockLoop
-    7400042: Longs_BlockImpact
-    7400044: Longs_BlockEnd
-    7400046: Longs_BlockAdd
-    7400048: Longs_CrouchLoop
-    7400050: Longs_CrouchStart
-    7400052: Longs_CrouchEnd
-    9500000: //RootNode
-    13700000: DummyMESH
-    13700002: VampArmsLegsMESH_LOD0
-    13700004: VampCapeMESH
-    13700006: VampHeadMESH_LOD0
-    13700008: VampTeethMESH_LOD0
-    13700010: VampTorsoMESH_LOD0
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: DummyMESH
+  - first:
+      1: 100002
+    second: Head
+  - first:
+      1: 100004
+    second: Hips
+  - first:
+      1: 100006
+    second: LeftArm
+  - first:
+      1: 100008
+    second: LeftArmRoll
+  - first:
+      1: 100010
+    second: LeftFoot
+  - first:
+      1: 100012
+    second: LeftForeArm
+  - first:
+      1: 100014
+    second: LeftForeArmRoll
+  - first:
+      1: 100016
+    second: LeftHand
+  - first:
+      1: 100018
+    second: LeftHandIndex1
+  - first:
+      1: 100020
+    second: LeftHandIndex2
+  - first:
+      1: 100022
+    second: LeftHandIndex3
+  - first:
+      1: 100024
+    second: LeftHandIndex4
+  - first:
+      1: 100026
+    second: LeftHandMiddle1
+  - first:
+      1: 100028
+    second: LeftHandMiddle2
+  - first:
+      1: 100030
+    second: LeftHandMiddle3
+  - first:
+      1: 100032
+    second: LeftHandMiddle4
+  - first:
+      1: 100034
+    second: LeftHandPinky1
+  - first:
+      1: 100036
+    second: LeftHandPinky2
+  - first:
+      1: 100038
+    second: LeftHandPinky3
+  - first:
+      1: 100040
+    second: LeftHandPinky4
+  - first:
+      1: 100042
+    second: LeftHandProp
+  - first:
+      1: 100044
+    second: LeftHandRing1
+  - first:
+      1: 100046
+    second: LeftHandRing2
+  - first:
+      1: 100048
+    second: LeftHandRing3
+  - first:
+      1: 100050
+    second: LeftHandRing4
+  - first:
+      1: 100052
+    second: LeftHandThumb1
+  - first:
+      1: 100054
+    second: LeftHandThumb2
+  - first:
+      1: 100056
+    second: LeftHandThumb3
+  - first:
+      1: 100058
+    second: LeftHandThumb4
+  - first:
+      1: 100060
+    second: LeftLeg
+  - first:
+      1: 100062
+    second: LeftLegRoll
+  - first:
+      1: 100064
+    second: LeftShoulder
+  - first:
+      1: 100066
+    second: LeftToeBase
+  - first:
+      1: 100068
+    second: LeftToeBase_END
+  - first:
+      1: 100070
+    second: LeftUpLeg
+  - first:
+      1: 100072
+    second: LeftUpLegRoll
+  - first:
+      1: 100074
+    second: //RootNode
+  - first:
+      1: 100076
+    second: Neck
+  - first:
+      1: 100078
+    second: RightArm
+  - first:
+      1: 100080
+    second: RightArmRoll
+  - first:
+      1: 100082
+    second: RightFoot
+  - first:
+      1: 100084
+    second: RightForeArm
+  - first:
+      1: 100086
+    second: RightForeArmRoll
+  - first:
+      1: 100088
+    second: RightHand
+  - first:
+      1: 100090
+    second: RightHandIndex1
+  - first:
+      1: 100092
+    second: RightHandIndex2
+  - first:
+      1: 100094
+    second: RightHandIndex3
+  - first:
+      1: 100096
+    second: RightHandIndex4
+  - first:
+      1: 100098
+    second: RightHandMiddle1
+  - first:
+      1: 100100
+    second: RightHandMiddle2
+  - first:
+      1: 100102
+    second: RightHandMiddle3
+  - first:
+      1: 100104
+    second: RightHandMiddle4
+  - first:
+      1: 100106
+    second: RightHandPinky1
+  - first:
+      1: 100108
+    second: RightHandPinky2
+  - first:
+      1: 100110
+    second: RightHandPinky3
+  - first:
+      1: 100112
+    second: RightHandPinky4
+  - first:
+      1: 100114
+    second: RightHandProp
+  - first:
+      1: 100116
+    second: RightHandRing1
+  - first:
+      1: 100118
+    second: RightHandRing2
+  - first:
+      1: 100120
+    second: RightHandRing3
+  - first:
+      1: 100122
+    second: RightHandRing4
+  - first:
+      1: 100124
+    second: RightHandThumb1
+  - first:
+      1: 100126
+    second: RightHandThumb2
+  - first:
+      1: 100128
+    second: RightHandThumb3
+  - first:
+      1: 100130
+    second: RightHandThumb4
+  - first:
+      1: 100132
+    second: RightLeg
+  - first:
+      1: 100134
+    second: RightLegRoll
+  - first:
+      1: 100136
+    second: RightShoulder
+  - first:
+      1: 100138
+    second: RightToeBase
+  - first:
+      1: 100140
+    second: RightToeBase_END
+  - first:
+      1: 100142
+    second: RightUpLeg
+  - first:
+      1: 100144
+    second: RightUpLegRoll
+  - first:
+      1: 100146
+    second: Root
+  - first:
+      1: 100148
+    second: Spine
+  - first:
+      1: 100150
+    second: Spine1
+  - first:
+      1: 100152
+    second: Jaw
+  - first:
+      1: 100154
+    second: Jaw_END
+  - first:
+      1: 100156
+    second: LeftBrow1
+  - first:
+      1: 100158
+    second: LeftBrow2
+  - first:
+      1: 100160
+    second: LeftBrow3
+  - first:
+      1: 100162
+    second: LeftCheek
+  - first:
+      1: 100164
+    second: LeftCheek1
+  - first:
+      1: 100166
+    second: LeftCheekMouth
+  - first:
+      1: 100168
+    second: LeftCheekUp
+  - first:
+      1: 100170
+    second: LeftCheekUp1
+  - first:
+      1: 100172
+    second: LeftChin
+  - first:
+      1: 100174
+    second: LeftEye
+  - first:
+      1: 100176
+    second: LeftEyeLidDown
+  - first:
+      1: 100178
+    second: LeftEyeLidUp
+  - first:
+      1: 100180
+    second: LeftFrontSkirt1
+  - first:
+      1: 100182
+    second: LeftFrontSkirt2
+  - first:
+      1: 100184
+    second: LeftNostril
+  - first:
+      1: 100186
+    second: LeftPauldron
+  - first:
+      1: 100188
+    second: MouthCenterDown
+  - first:
+      1: 100190
+    second: MouthCenterUp
+  - first:
+      1: 100192
+    second: MouthLeftCorner
+  - first:
+      1: 100194
+    second: MouthLeftDown
+  - first:
+      1: 100196
+    second: MouthLeftDown1
+  - first:
+      1: 100198
+    second: MouthLeftUp
+  - first:
+      1: 100200
+    second: MouthLeftUp1
+  - first:
+      1: 100202
+    second: MouthRightCorner
+  - first:
+      1: 100204
+    second: MouthRightDown
+  - first:
+      1: 100206
+    second: MouthRightDown1
+  - first:
+      1: 100208
+    second: MouthRightUp
+  - first:
+      1: 100210
+    second: MouthRightUp1
+  - first:
+      1: 100212
+    second: RightBrow1
+  - first:
+      1: 100214
+    second: RightBrow2
+  - first:
+      1: 100216
+    second: RightBrow3
+  - first:
+      1: 100218
+    second: RightCheek
+  - first:
+      1: 100220
+    second: RightCheek1
+  - first:
+      1: 100222
+    second: RightCheekMouth
+  - first:
+      1: 100224
+    second: RightCheekUp
+  - first:
+      1: 100226
+    second: RightCheekUp1
+  - first:
+      1: 100228
+    second: RightChin
+  - first:
+      1: 100230
+    second: RightEye
+  - first:
+      1: 100232
+    second: RightEyeLidDown
+  - first:
+      1: 100234
+    second: RightEyeLidUp
+  - first:
+      1: 100236
+    second: RightFrontSkirt1
+  - first:
+      1: 100238
+    second: RightFrontSkirt2
+  - first:
+      1: 100240
+    second: RightNostril
+  - first:
+      1: 100242
+    second: RightPauldron
+  - first:
+      1: 100244
+    second: Tongue
+  - first:
+      1: 100246
+    second: Tongue1
+  - first:
+      1: 100248
+    second: Tongue2
+  - first:
+      1: 100250
+    second: VampArmsLegsMESH_LOD0
+  - first:
+      1: 100252
+    second: VampCapeMESH
+  - first:
+      1: 100254
+    second: VampHeadMESH_LOD0
+  - first:
+      1: 100256
+    second: VampTeethMESH_LOD0
+  - first:
+      1: 100258
+    second: VampTorsoMESH_LOD0
+  - first:
+      4: 400000
+    second: DummyMESH
+  - first:
+      4: 400002
+    second: Head
+  - first:
+      4: 400004
+    second: Hips
+  - first:
+      4: 400006
+    second: LeftArm
+  - first:
+      4: 400008
+    second: LeftArmRoll
+  - first:
+      4: 400010
+    second: LeftFoot
+  - first:
+      4: 400012
+    second: LeftForeArm
+  - first:
+      4: 400014
+    second: LeftForeArmRoll
+  - first:
+      4: 400016
+    second: LeftHand
+  - first:
+      4: 400018
+    second: LeftHandIndex1
+  - first:
+      4: 400020
+    second: LeftHandIndex2
+  - first:
+      4: 400022
+    second: LeftHandIndex3
+  - first:
+      4: 400024
+    second: LeftHandIndex4
+  - first:
+      4: 400026
+    second: LeftHandMiddle1
+  - first:
+      4: 400028
+    second: LeftHandMiddle2
+  - first:
+      4: 400030
+    second: LeftHandMiddle3
+  - first:
+      4: 400032
+    second: LeftHandMiddle4
+  - first:
+      4: 400034
+    second: LeftHandPinky1
+  - first:
+      4: 400036
+    second: LeftHandPinky2
+  - first:
+      4: 400038
+    second: LeftHandPinky3
+  - first:
+      4: 400040
+    second: LeftHandPinky4
+  - first:
+      4: 400042
+    second: LeftHandProp
+  - first:
+      4: 400044
+    second: LeftHandRing1
+  - first:
+      4: 400046
+    second: LeftHandRing2
+  - first:
+      4: 400048
+    second: LeftHandRing3
+  - first:
+      4: 400050
+    second: LeftHandRing4
+  - first:
+      4: 400052
+    second: LeftHandThumb1
+  - first:
+      4: 400054
+    second: LeftHandThumb2
+  - first:
+      4: 400056
+    second: LeftHandThumb3
+  - first:
+      4: 400058
+    second: LeftHandThumb4
+  - first:
+      4: 400060
+    second: LeftLeg
+  - first:
+      4: 400062
+    second: LeftLegRoll
+  - first:
+      4: 400064
+    second: LeftShoulder
+  - first:
+      4: 400066
+    second: LeftToeBase
+  - first:
+      4: 400068
+    second: LeftToeBase_END
+  - first:
+      4: 400070
+    second: LeftUpLeg
+  - first:
+      4: 400072
+    second: LeftUpLegRoll
+  - first:
+      4: 400074
+    second: //RootNode
+  - first:
+      4: 400076
+    second: Neck
+  - first:
+      4: 400078
+    second: RightArm
+  - first:
+      4: 400080
+    second: RightArmRoll
+  - first:
+      4: 400082
+    second: RightFoot
+  - first:
+      4: 400084
+    second: RightForeArm
+  - first:
+      4: 400086
+    second: RightForeArmRoll
+  - first:
+      4: 400088
+    second: RightHand
+  - first:
+      4: 400090
+    second: RightHandIndex1
+  - first:
+      4: 400092
+    second: RightHandIndex2
+  - first:
+      4: 400094
+    second: RightHandIndex3
+  - first:
+      4: 400096
+    second: RightHandIndex4
+  - first:
+      4: 400098
+    second: RightHandMiddle1
+  - first:
+      4: 400100
+    second: RightHandMiddle2
+  - first:
+      4: 400102
+    second: RightHandMiddle3
+  - first:
+      4: 400104
+    second: RightHandMiddle4
+  - first:
+      4: 400106
+    second: RightHandPinky1
+  - first:
+      4: 400108
+    second: RightHandPinky2
+  - first:
+      4: 400110
+    second: RightHandPinky3
+  - first:
+      4: 400112
+    second: RightHandPinky4
+  - first:
+      4: 400114
+    second: RightHandProp
+  - first:
+      4: 400116
+    second: RightHandRing1
+  - first:
+      4: 400118
+    second: RightHandRing2
+  - first:
+      4: 400120
+    second: RightHandRing3
+  - first:
+      4: 400122
+    second: RightHandRing4
+  - first:
+      4: 400124
+    second: RightHandThumb1
+  - first:
+      4: 400126
+    second: RightHandThumb2
+  - first:
+      4: 400128
+    second: RightHandThumb3
+  - first:
+      4: 400130
+    second: RightHandThumb4
+  - first:
+      4: 400132
+    second: RightLeg
+  - first:
+      4: 400134
+    second: RightLegRoll
+  - first:
+      4: 400136
+    second: RightShoulder
+  - first:
+      4: 400138
+    second: RightToeBase
+  - first:
+      4: 400140
+    second: RightToeBase_END
+  - first:
+      4: 400142
+    second: RightUpLeg
+  - first:
+      4: 400144
+    second: RightUpLegRoll
+  - first:
+      4: 400146
+    second: Root
+  - first:
+      4: 400148
+    second: Spine
+  - first:
+      4: 400150
+    second: Spine1
+  - first:
+      4: 400152
+    second: Jaw
+  - first:
+      4: 400154
+    second: Jaw_END
+  - first:
+      4: 400156
+    second: LeftBrow1
+  - first:
+      4: 400158
+    second: LeftBrow2
+  - first:
+      4: 400160
+    second: LeftBrow3
+  - first:
+      4: 400162
+    second: LeftCheek
+  - first:
+      4: 400164
+    second: LeftCheek1
+  - first:
+      4: 400166
+    second: LeftCheekMouth
+  - first:
+      4: 400168
+    second: LeftCheekUp
+  - first:
+      4: 400170
+    second: LeftCheekUp1
+  - first:
+      4: 400172
+    second: LeftChin
+  - first:
+      4: 400174
+    second: LeftEye
+  - first:
+      4: 400176
+    second: LeftEyeLidDown
+  - first:
+      4: 400178
+    second: LeftEyeLidUp
+  - first:
+      4: 400180
+    second: LeftFrontSkirt1
+  - first:
+      4: 400182
+    second: LeftFrontSkirt2
+  - first:
+      4: 400184
+    second: LeftNostril
+  - first:
+      4: 400186
+    second: LeftPauldron
+  - first:
+      4: 400188
+    second: MouthCenterDown
+  - first:
+      4: 400190
+    second: MouthCenterUp
+  - first:
+      4: 400192
+    second: MouthLeftCorner
+  - first:
+      4: 400194
+    second: MouthLeftDown
+  - first:
+      4: 400196
+    second: MouthLeftDown1
+  - first:
+      4: 400198
+    second: MouthLeftUp
+  - first:
+      4: 400200
+    second: MouthLeftUp1
+  - first:
+      4: 400202
+    second: MouthRightCorner
+  - first:
+      4: 400204
+    second: MouthRightDown
+  - first:
+      4: 400206
+    second: MouthRightDown1
+  - first:
+      4: 400208
+    second: MouthRightUp
+  - first:
+      4: 400210
+    second: MouthRightUp1
+  - first:
+      4: 400212
+    second: RightBrow1
+  - first:
+      4: 400214
+    second: RightBrow2
+  - first:
+      4: 400216
+    second: RightBrow3
+  - first:
+      4: 400218
+    second: RightCheek
+  - first:
+      4: 400220
+    second: RightCheek1
+  - first:
+      4: 400222
+    second: RightCheekMouth
+  - first:
+      4: 400224
+    second: RightCheekUp
+  - first:
+      4: 400226
+    second: RightCheekUp1
+  - first:
+      4: 400228
+    second: RightChin
+  - first:
+      4: 400230
+    second: RightEye
+  - first:
+      4: 400232
+    second: RightEyeLidDown
+  - first:
+      4: 400234
+    second: RightEyeLidUp
+  - first:
+      4: 400236
+    second: RightFrontSkirt1
+  - first:
+      4: 400238
+    second: RightFrontSkirt2
+  - first:
+      4: 400240
+    second: RightNostril
+  - first:
+      4: 400242
+    second: RightPauldron
+  - first:
+      4: 400244
+    second: Tongue
+  - first:
+      4: 400246
+    second: Tongue1
+  - first:
+      4: 400248
+    second: Tongue2
+  - first:
+      4: 400250
+    second: VampArmsLegsMESH_LOD0
+  - first:
+      4: 400252
+    second: VampCapeMESH
+  - first:
+      4: 400254
+    second: VampHeadMESH_LOD0
+  - first:
+      4: 400256
+    second: VampTeethMESH_LOD0
+  - first:
+      4: 400258
+    second: VampTorsoMESH_LOD0
+  - first:
+      43: 4300000
+    second: DummyMESH
+  - first:
+      43: 4300002
+    second: VampTeethMESH_LOD0
+  - first:
+      43: 4300004
+    second: VampTorsoMESH_LOD0
+  - first:
+      43: 4300006
+    second: VampCapeMESH
+  - first:
+      43: 4300008
+    second: VampArmsLegsMESH_LOD0
+  - first:
+      43: 4300010
+    second: VampHeadMESH_LOD0
+  - first:
+      74: 7400000
+    second: Longs_GetUpBack
+  - first:
+      74: 7400002
+    second: Longs_KO_1
+  - first:
+      74: 7400004
+    second: Longs_KO_2
+  - first:
+      74: 7400006
+    second: Longs_KO_Air
+  - first:
+      74: 7400008
+    second: Longs_KO_AirStrong
+  - first:
+      74: 7400010
+    second: Longs_KO_Fall_Start
+  - first:
+      74: 7400012
+    second: Longs_KO_Fall_End
+  - first:
+      74: 7400014
+    second: Longs_SprintLoop
+  - first:
+      74: 7400016
+    second: Longs_SprintStart
+  - first:
+      74: 7400018
+    second: Longs_SprintStop_LU
+  - first:
+      74: 7400020
+    second: Longs_SprintStop_RU
+  - first:
+      74: 7400022
+    second: Longs_RollFwd
+  - first:
+      74: 7400024
+    second: Longs_RollBwd
+  - first:
+      74: 7400026
+    second: Longs_RollLeft
+  - first:
+      74: 7400028
+    second: Longs_RollRight
+  - first:
+      74: 7400030
+    second: Longs_OnGround_Hit
+  - first:
+      74: 7400032
+    second: Longs_JumpAttack_R
+  - first:
+      74: 7400034
+    second: Longs_JumpAttack_RD
+  - first:
+      74: 7400036
+    second: Longs_JumpAttack_LD
+  - first:
+      74: 7400038
+    second: Longs_BlockStart
+  - first:
+      74: 7400040
+    second: Longs_BlockLoop
+  - first:
+      74: 7400042
+    second: Longs_BlockImpact
+  - first:
+      74: 7400044
+    second: Longs_BlockEnd
+  - first:
+      74: 7400046
+    second: Longs_BlockAdd
+  - first:
+      74: 7400048
+    second: Longs_CrouchLoop
+  - first:
+      74: 7400050
+    second: Longs_CrouchStart
+  - first:
+      74: 7400052
+    second: Longs_CrouchEnd
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: DummyMESH
+  - first:
+      137: 13700002
+    second: VampArmsLegsMESH_LOD0
+  - first:
+      137: 13700004
+    second: VampCapeMESH
+  - first:
+      137: 13700006
+    second: VampHeadMESH_LOD0
+  - first:
+      137: 13700008
+    second: VampTeethMESH_LOD0
+  - first:
+      137: 13700010
+    second: VampTorsoMESH_LOD0
+  externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -321,6 +921,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.2
     animationPositionError: 0.2
@@ -332,6 +934,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_GetUpBack
       takeName: Longs_GetUpBack
+      internalID: 0
       firstFrame: 0
       lastFrame: 100
       wrapMode: 0
@@ -356,30 +959,42 @@ ModelImporter:
         curve:
           serializedVersion: 2
           curve:
-          - serializedVersion: 2
+          - serializedVersion: 3
             time: 0
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          - serializedVersion: 2
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
             time: 0.66630864
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          - serializedVersion: 2
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
             time: 0.6751964
             value: 0
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          - serializedVersion: 2
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
             time: 1
             value: 0
             inSlope: 0
             outSlope: 0
             tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 0
@@ -387,30 +1002,42 @@ ModelImporter:
         curve:
           serializedVersion: 2
           curve:
-          - serializedVersion: 2
+          - serializedVersion: 3
             time: 0
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          - serializedVersion: 2
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
             time: 0.60530937
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          - serializedVersion: 2
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
             time: 0.6311676
             value: 0
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          - serializedVersion: 2
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
             time: 1
             value: 0
             inSlope: 0
             outSlope: 0
             tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 0
@@ -574,6 +1201,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_KO_1
       takeName: Longs_KO_1
+      internalID: 0
       firstFrame: 0
       lastFrame: 117
       wrapMode: 0
@@ -754,6 +1382,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_KO_2
       takeName: Longs_KO_2
+      internalID: 0
       firstFrame: 0
       lastFrame: 195
       wrapMode: 0
@@ -941,6 +1570,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_KO_Air
       takeName: Longs_KO_Air
+      internalID: 0
       firstFrame: 0
       lastFrame: 108
       wrapMode: 0
@@ -965,18 +1595,24 @@ ModelImporter:
         curve:
           serializedVersion: 2
           curve:
-          - serializedVersion: 2
+          - serializedVersion: 3
             time: 0
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          - serializedVersion: 2
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
             time: 1
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 0
@@ -984,18 +1620,24 @@ ModelImporter:
         curve:
           serializedVersion: 2
           curve:
-          - serializedVersion: 2
+          - serializedVersion: 3
             time: 0
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          - serializedVersion: 2
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
             time: 1
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 0
@@ -1159,6 +1801,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_KO_AirStrong
       takeName: Longs_KO_AirStrong
+      internalID: 0
       firstFrame: 0
       lastFrame: 108
       wrapMode: 0
@@ -1339,6 +1982,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_KO_Fall_Start
       takeName: Longs_KO_Fall_Start
+      internalID: 0
       firstFrame: 5
       lastFrame: 150
       wrapMode: 0
@@ -1519,6 +2163,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_KO_Fall_End
       takeName: Longs_KO_Fall_End
+      internalID: 0
       firstFrame: 35
       lastFrame: 108
       wrapMode: 0
@@ -1699,6 +2344,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_SprintLoop
       takeName: Longs_SprintLoop
+      internalID: 0
       firstFrame: 0
       lastFrame: 38
       wrapMode: 0
@@ -1879,6 +2525,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_SprintStart
       takeName: Longs_SprintStart
+      internalID: 0
       firstFrame: 0
       lastFrame: 26
       wrapMode: 0
@@ -2066,6 +2713,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_SprintStop_LU
       takeName: Longs_SprintStop_LU
+      internalID: 0
       firstFrame: 0
       lastFrame: 66
       wrapMode: 0
@@ -2246,6 +2894,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_SprintStop_RU
       takeName: Longs_SprintStop_RU
+      internalID: 0
       firstFrame: 0
       lastFrame: 60
       wrapMode: 0
@@ -2426,6 +3075,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_RollFwd
       takeName: Longs_RollFwd
+      internalID: 0
       firstFrame: 0
       lastFrame: 102
       wrapMode: 0
@@ -2606,6 +3256,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_RollBwd
       takeName: Longs_RollBwd
+      internalID: 0
       firstFrame: 0
       lastFrame: 117
       wrapMode: 0
@@ -2786,6 +3437,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_RollLeft
       takeName: Longs_RollLeft
+      internalID: 0
       firstFrame: 0
       lastFrame: 104
       wrapMode: 0
@@ -2966,6 +3618,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_RollRight
       takeName: Longs_RollRight
+      internalID: 0
       firstFrame: 0
       lastFrame: 102
       wrapMode: 0
@@ -3146,6 +3799,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_OnGround_Hit
       takeName: Longs_OnGround_Hit
+      internalID: 0
       firstFrame: 23
       lastFrame: 108
       wrapMode: 0
@@ -3154,7 +3808,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 1
@@ -3170,18 +3824,24 @@ ModelImporter:
         curve:
           serializedVersion: 2
           curve:
-          - serializedVersion: 2
+          - serializedVersion: 3
             time: 0
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
-          - serializedVersion: 2
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
             time: 1
             value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 0
@@ -3341,10 +4001,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 23
     - serializedVersion: 16
       name: Longs_JumpAttack_R
       takeName: Longs_JumpAttack_R
+      internalID: 0
       firstFrame: 0
       lastFrame: 104
       wrapMode: 0
@@ -3525,6 +4186,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_JumpAttack_RD
       takeName: Longs_JumpAttack_RD
+      internalID: 0
       firstFrame: 0
       lastFrame: 130
       wrapMode: 0
@@ -3705,6 +4367,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_JumpAttack_LD
       takeName: Longs_JumpAttack_LD
+      internalID: 0
       firstFrame: 0
       lastFrame: 84
       wrapMode: 0
@@ -3892,6 +4555,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_BlockStart
       takeName: Longs_BlockStart
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -4072,6 +4736,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_BlockLoop
       takeName: Longs_BlockLoop
+      internalID: 0
       firstFrame: 240
       lastFrame: 360
       wrapMode: 0
@@ -4252,6 +4917,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_BlockImpact
       takeName: Longs_BlockImpact
+      internalID: 0
       firstFrame: 0
       lastFrame: 33
       wrapMode: 0
@@ -4432,6 +5098,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_BlockEnd
       takeName: Longs_BlockEnd
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -4612,6 +5279,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_BlockAdd
       takeName: Longs_BlockAdd
+      internalID: 0
       firstFrame: 0
       lastFrame: 60
       wrapMode: 0
@@ -4792,6 +5460,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_CrouchLoop
       takeName: Longs_CrouchLoop
+      internalID: 0
       firstFrame: 0
       lastFrame: 92
       wrapMode: 0
@@ -4972,6 +5641,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_CrouchStart
       takeName: Longs_CrouchStart
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -5152,6 +5822,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Longs_CrouchEnd
       takeName: Longs_CrouchEnd
+      internalID: 0
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -5335,19 +6006,31 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -5355,10 +6038,13 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: Hips
       humanName: Hips
@@ -6436,15 +7122,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: Root
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 3aaf38176678e1d4994b710ba08065f2,
     type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

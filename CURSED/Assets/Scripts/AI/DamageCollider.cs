@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MainHero;
 
 public class DamageCollider : MonoBehaviour
 {
@@ -26,13 +27,23 @@ public class DamageCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Hittable")
+        if(other.tag == "Player ")
         {
             PlayerStats playerStats = other.GetComponent<PlayerStats>();
 
             if (playerStats != null)
             {
                 playerStats.TakeDamage(currentWeaponDamage);
+            }
+        }
+
+        if (other.tag == "Enemy")
+        {
+            EnemyStats enemyStats = other.GetComponent<EnemyStats>();
+
+            if (enemyStats != null)
+            {
+                enemyStats.TakeDamage(currentWeaponDamage);
             }
         }
     }
