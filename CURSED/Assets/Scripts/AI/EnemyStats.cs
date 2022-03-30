@@ -7,7 +7,7 @@ using UnityEngine;
     public class EnemyStats : CharacterStats
     {
         public HealthBar healthBar;
-        public Animator anim;
+        [HideInInspector]public Animator anim;
         void Start()
         {
             anim = GetComponent<Animator>();
