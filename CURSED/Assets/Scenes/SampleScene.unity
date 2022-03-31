@@ -13210,6 +13210,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0558abc42eda771439f8593c7821a2d7, type: 3}
+--- !u!114 &1381106785 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1970227055347778302, guid: 0268be9ded5f6ad47b02d9654949a1e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7664840466027554827}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eafefc21785cbf4e8cd1013fe4c730f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1393384511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17711,11 +17723,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1970227055347778302, guid: 0268be9ded5f6ad47b02d9654949a1e4,
+        type: 3}
+      propertyPath: isSleeping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970227055347778302, guid: 0268be9ded5f6ad47b02d9654949a1e4,
+        type: 3}
+      propertyPath: detectionLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 7982020540919244464, guid: 0268be9ded5f6ad47b02d9654949a1e4,
         type: 3}
       propertyPath: m_Name
       value: Character_BR_MutantGuy_01
       objectReference: {fileID: 0}
+    - target: {fileID: 7982020540919244469, guid: 0268be9ded5f6ad47b02d9654949a1e4,
+        type: 3}
+      propertyPath: currentState
+      value: 
+      objectReference: {fileID: 1381106785}
     - target: {fileID: 7985362035593063610, guid: 0268be9ded5f6ad47b02d9654949a1e4,
         type: 3}
       propertyPath: m_RootOrder
@@ -17724,17 +17751,17 @@ PrefabInstance:
     - target: {fileID: 7985362035593063610, guid: 0268be9ded5f6ad47b02d9654949a1e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 34.68
+      value: 38.47
       objectReference: {fileID: 0}
     - target: {fileID: 7985362035593063610, guid: 0268be9ded5f6ad47b02d9654949a1e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.139044
+      value: 2.51
       objectReference: {fileID: 0}
     - target: {fileID: 7985362035593063610, guid: 0268be9ded5f6ad47b02d9654949a1e4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.68
+      value: -27.42
       objectReference: {fileID: 0}
     - target: {fileID: 7985362035593063610, guid: 0268be9ded5f6ad47b02d9654949a1e4,
         type: 3}

@@ -11,6 +11,7 @@ public class EnemyManager : CharacterManager
     
 
     public bool isPreformingAction;
+    public bool isInteracting;
 
     public NavMeshAgent navMeshAgent;
     public State currentState;
@@ -50,6 +51,7 @@ public class EnemyManager : CharacterManager
     private void Update() 
     {
         HandleRecoveryTimer();
+        isInteracting = enemyAnimatorManager.anim.GetBool("IsInteracting");
     }
     private void FixedUpdate() 
     {
