@@ -26,9 +26,15 @@ using UnityEngine;
         {
             currentHealth = currentHealth - damage;
 
-          //  healthBar.SetCurrentHealth(currentHealth);
-
-           anim.Play("Damage_01");
+        //  healthBar.SetCurrentHealth(currentHealth);
+        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Damage_01"))
+        {
+            anim.Play("Damage_02");
+        }
+        else
+        {
+            anim.Play("Damage_01");
+        }
 
 
             if (currentHealth <= 0)

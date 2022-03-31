@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IsInteracting : StateMachineBehaviour
+public class ResetAnimation : StateMachineBehaviour
 {
     public string targetBool;
     public bool status;

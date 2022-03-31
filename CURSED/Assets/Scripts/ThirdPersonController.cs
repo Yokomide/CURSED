@@ -48,6 +48,8 @@ namespace MainHero
 		public LayerMask GroundLayers;
 
 		[Space(10)]
+		public bool isInteracting;
+		public bool canDoCombo;
 		public float AttackTimeout = 0.50f;
 
 		[Header("Cinemachine")]
@@ -87,7 +89,8 @@ namespace MainHero
 		private int _animIDMotionSpeed;
 		private int _animIDAttack;
 
-		private Animator _animator;
+		public Animator animator;
+
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
@@ -107,7 +110,7 @@ namespace MainHero
 
 		private void Start()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
+			_hasAnimator = TryGetComponent(out animator);
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 
@@ -120,8 +123,9 @@ namespace MainHero
 
 		private void Update()
 		{
-			_hasAnimator = TryGetComponent(out _animator);
-
+			_hasAnimator = TryGetComponent(out animator);
+			canDoCombo = animator.GetBool("canDoCombo");
+			isInteracting = animator.GetBool("isInteracting");
 			PlayerGravity();
 			GroundedCheck();
 			Move();
@@ -151,7 +155,7 @@ namespace MainHero
 			// update animator if using character
 			if (_hasAnimator)
 			{
-				_animator.SetBool(_animIDGrounded, Grounded);
+				animator.SetBool(_animIDGrounded, Grounded);
 			}
 		}
 
@@ -230,8 +234,8 @@ namespace MainHero
 			// update animator if using character
 			if (_hasAnimator)
 			{
-				_animator.SetFloat(_animIDSpeed, Mathf.Clamp(_animationBlend, 0f, 1.7f));
-				_animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+				animator.SetFloat(_animIDSpeed, Mathf.Clamp(_animationBlend, 0f, 1.7f));
+				animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
 			}
 		}
 
@@ -244,8 +248,8 @@ namespace MainHero
 
 				if (_hasAnimator)
 				{
-					_animator.SetBool(_animIDJump, false);
-					_animator.SetBool(_animIDFreeFall, false);
+					animator.SetBool(_animIDJump, false);
+					animator.SetBool(_animIDFreeFall, false);
 				}
 
 				if (_verticalVelocity < 0.0f)
@@ -264,7 +268,7 @@ namespace MainHero
 				{
 					if (_hasAnimator)
 					{
-						_animator.SetBool(_animIDFreeFall, true);
+						animator.SetBool(_animIDFreeFall, true);
 					}
 				}
 
@@ -275,14 +279,6 @@ namespace MainHero
 			{
 				_verticalVelocity += Gravity * Time.deltaTime;
 			}
-		}
-		public void PlayTargetAnimation(string targetAnim, bool isInteracting)
-		{
-
-				_animator.SetBool("isInteracting", true);
-				_animator.applyRootMotion = true;
-				_animator.CrossFade(targetAnim, 0.2f);
-
 		}
 
 

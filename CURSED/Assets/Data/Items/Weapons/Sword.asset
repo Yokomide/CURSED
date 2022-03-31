@@ -18,4 +18,8 @@ MonoBehaviour:
     type: 3}
   isUnarmed: 0
   OH_Light_Attack_1: OH_Light_Attack_1
+  OH_Light_Attack_2: OH_Light_Attack_2
+  OH_Light_Attack_3: OH_Light_Attack_3
   OH_Heavy_Attack_1: OH_Heavy_Attack_1
+  OH_Heavy_Attack_2: 
+  OH_Heavy_Attack_3: 

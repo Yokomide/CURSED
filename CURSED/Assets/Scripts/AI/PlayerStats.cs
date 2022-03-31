@@ -7,10 +7,10 @@ namespace MainHero
     public class PlayerStats : CharacterStats
     {
         public HealthBar healthBar;
-        public ThirdPersonController controller;
+        public AnimatorManager animController;
         void Start()
         {
-            controller = GetComponent<ThirdPersonController>();
+            animController = GetComponent<AnimatorManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
@@ -28,13 +28,13 @@ namespace MainHero
 
             healthBar.SetCurrentHealth(currentHealth);
 
-            controller.PlayTargetAnimation("Damage_01", true);
+            animController.PlayTargetAnimation("Damage_01", true);
 
 
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                controller.PlayTargetAnimation("Death_01", true);
+                animController.PlayTargetAnimation("Death_01", true);
             }
         }
     }
