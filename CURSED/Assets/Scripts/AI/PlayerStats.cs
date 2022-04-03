@@ -33,9 +33,13 @@ namespace MainHero
 
             if (currentHealth <= 0)
             {
+                Death();
+            }
+        }
+        public void Death()
+        {
                 currentHealth = 0;
                 animController.PlayTargetAnimation("Death_01", true);
-            }
         }
     }
 }
