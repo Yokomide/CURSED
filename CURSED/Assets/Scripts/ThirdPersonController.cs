@@ -99,8 +99,10 @@ namespace MainHero
 
 		private bool _hasAnimator;
 
+
 		private void Awake()
 		{
+			
 			// get a reference to our main camera
 			if (_mainCamera == null)
 			{

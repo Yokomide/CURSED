@@ -8,11 +8,18 @@ public class EnemyLocomotionManager : MonoBehaviour
 {
     EnemyManager enemyManager;
     EnemyAnimatorManager enemyAnimatorManager;
+    public LayerMask detectionLayer;
+    CapsuleCollider characterCollider;
+    CapsuleCollider characterCollisionBlockerCollider;
 
     private void Awake()
     {
         enemyManager = GetComponent<EnemyManager>();
         enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
     }
-    
+
+    private void Start() 
+    {
+        // Physics.IgnoreCollision(characterCollider,characterCollisionBlockerCollider,true);
+    }
 }

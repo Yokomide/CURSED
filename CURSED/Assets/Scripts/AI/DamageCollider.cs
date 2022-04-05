@@ -17,11 +17,13 @@ public class DamageCollider : MonoBehaviour
 
     public void EnableDamageCollider()
     {
+        Debug.Log("Включился");
         damageCollider.enabled = true;
     }
 
     public void DisableDamageCollider()
     {
+        Debug.Log("ВЫключився");
         damageCollider.enabled = false;
     }
 
@@ -29,6 +31,7 @@ public class DamageCollider : MonoBehaviour
     {
         if(other.tag == "Player ")
         {
+            Debug.Log("ПЛАВУВЕР");
             PlayerStats playerStats = other.GetComponent<PlayerStats>();
 
             if (playerStats != null)
@@ -39,6 +42,7 @@ public class DamageCollider : MonoBehaviour
 
         if (other.tag == "Enemy")
         {
+            Debug.Log("ЭНЕМЯ");
             EnemyStats enemyStats = other.GetComponent<EnemyStats>();
 
             if (enemyStats != null)
@@ -46,11 +50,5 @@ public class DamageCollider : MonoBehaviour
                 enemyStats.TakeDamage(currentWeaponDamage);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
