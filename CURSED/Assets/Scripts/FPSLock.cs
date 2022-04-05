@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class FPSLock : MonoBehaviour
 {
+    public int targetFPS;
     void Start()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = targetFPS;
     }
+    
 
 }

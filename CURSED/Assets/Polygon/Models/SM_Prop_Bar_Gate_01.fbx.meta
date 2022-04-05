@@ -1,55 +1,137 @@
 fileFormatVersion: 2
 guid: e5b8387cc5e6b9f4289fc3a3f07c5978
-timeCreated: 1582059876
-licenseType: Store
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: pCube494
-    100002: pCube495
-    100004: pCube496
-    100006: pCube497
-    100008: pCube502
-    100010: pCube503
-    100012: //RootNode
-    100014: SM_Prop_Bar_Gate_01_Door
-    400000: pCube494
-    400002: pCube495
-    400004: pCube496
-    400006: pCube497
-    400008: pCube502
-    400010: pCube503
-    400012: //RootNode
-    400014: SM_Prop_Bar_Gate_01_Door
-    2300000: pCube494
-    2300002: pCube495
-    2300004: pCube496
-    2300006: pCube497
-    2300008: pCube502
-    2300010: pCube503
-    2300012: //RootNode
-    2300014: SM_Prop_Bar_Gate_01_Door
-    3300000: pCube494
-    3300002: pCube495
-    3300004: pCube496
-    3300006: pCube497
-    3300008: pCube502
-    3300010: pCube503
-    3300012: //RootNode
-    3300014: SM_Prop_Bar_Gate_01_Door
-    4300000: SM_Prop_Bar_Gate_01
-    4300002: SM_Prop_Bar_Gate_01_Door
-    4300004: pCube495
-    4300006: pCube497
-    4300008: pCube496
-    4300010: pCube494
-    4300012: pCube502
-    4300014: pCube503
-    9500000: //RootNode
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: pCube494
+  - first:
+      1: 100002
+    second: pCube495
+  - first:
+      1: 100004
+    second: pCube496
+  - first:
+      1: 100006
+    second: pCube497
+  - first:
+      1: 100008
+    second: pCube502
+  - first:
+      1: 100010
+    second: pCube503
+  - first:
+      1: 100012
+    second: //RootNode
+  - first:
+      1: 100014
+    second: SM_Prop_Bar_Gate_01_Door
+  - first:
+      4: 400000
+    second: pCube494
+  - first:
+      4: 400002
+    second: pCube495
+  - first:
+      4: 400004
+    second: pCube496
+  - first:
+      4: 400006
+    second: pCube497
+  - first:
+      4: 400008
+    second: pCube502
+  - first:
+      4: 400010
+    second: pCube503
+  - first:
+      4: 400012
+    second: //RootNode
+  - first:
+      4: 400014
+    second: SM_Prop_Bar_Gate_01_Door
+  - first:
+      23: 2300000
+    second: pCube494
+  - first:
+      23: 2300002
+    second: pCube495
+  - first:
+      23: 2300004
+    second: pCube496
+  - first:
+      23: 2300006
+    second: pCube497
+  - first:
+      23: 2300008
+    second: pCube502
+  - first:
+      23: 2300010
+    second: pCube503
+  - first:
+      23: 2300012
+    second: //RootNode
+  - first:
+      23: 2300014
+    second: SM_Prop_Bar_Gate_01_Door
+  - first:
+      33: 3300000
+    second: pCube494
+  - first:
+      33: 3300002
+    second: pCube495
+  - first:
+      33: 3300004
+    second: pCube496
+  - first:
+      33: 3300006
+    second: pCube497
+  - first:
+      33: 3300008
+    second: pCube502
+  - first:
+      33: 3300010
+    second: pCube503
+  - first:
+      33: 3300012
+    second: //RootNode
+  - first:
+      33: 3300014
+    second: SM_Prop_Bar_Gate_01_Door
+  - first:
+      43: 4300000
+    second: SM_Prop_Bar_Gate_01
+  - first:
+      43: 4300002
+    second: SM_Prop_Bar_Gate_01_Door
+  - first:
+      43: 4300004
+    second: pCube495
+  - first:
+      43: 4300006
+    second: pCube497
+  - first:
+      43: 4300008
+    second: pCube496
+  - first:
+      43: 4300010
+    second: pCube494
+  - first:
+      43: 4300012
+    second: pCube502
+  - first:
+      43: 4300014
+    second: pCube503
+  - first:
+      95: 9500000
+    second: //RootNode
+  externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -62,6 +144,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -76,19 +160,31 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 0
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: 1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -96,10 +192,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -109,14 +208,17 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
