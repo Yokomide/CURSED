@@ -21,7 +21,7 @@ public class EnemyManager : CharacterManager
 
     public float distanceFromTarget;
     public float rotationSpeed = 25;
-    public float maximumAttackRange = 1.5f;
+    public float maximumAttackRange = 2.5f;
 
 
 
@@ -51,7 +51,7 @@ public class EnemyManager : CharacterManager
     private void Update() 
     {
         HandleRecoveryTimer();
-        isInteracting = enemyAnimatorManager.anim.GetBool("IsInteracting");
+       // isInteracting = enemyAnimatorManager.anim.GetBool("IsInteracting");
     }
     private void FixedUpdate() 
     {

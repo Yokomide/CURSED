@@ -6,6 +6,7 @@ using MainHero;
 public class DamageCollider : MonoBehaviour
 {
     Collider damageCollider;
+    public GameObject damageFX;
     public int currentWeaponDamage = 25;
     void Awake()
     {
@@ -17,21 +18,19 @@ public class DamageCollider : MonoBehaviour
 
     public void EnableDamageCollider()
     {
-        Debug.Log("Включился");
         damageCollider.enabled = true;
     }
 
     public void DisableDamageCollider()
     {
-        Debug.Log("ВЫключився");
         damageCollider.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player ")
+
+        if(other.tag == "Player")
         {
-            Debug.Log("ПЛАВУВЕР");
             PlayerStats playerStats = other.GetComponent<PlayerStats>();
 
             if (playerStats != null)
@@ -42,12 +41,12 @@ public class DamageCollider : MonoBehaviour
 
         if (other.tag == "Enemy")
         {
-            Debug.Log("ЭНЕМЯ");
             EnemyStats enemyStats = other.GetComponent<EnemyStats>();
 
             if (enemyStats != null)
             {
                 enemyStats.TakeDamage(currentWeaponDamage);
+                
             }
         }
     }

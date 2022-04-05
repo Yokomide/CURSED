@@ -28,8 +28,8 @@ public class AttackState : State
                     if(enemyManager.currentRecoveryTime<=0 && enemyManager.isPreformingAction == false)
                     {
                         enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
-                        enemyAnimatorManager.anim.SetFloat("Horizontal", 0, 0.1f, Time.deltaTime);
-                        enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
+                        //enemyAnimatorManager.anim.SetFloat("Horizontal", 0, 0.1f, Time.deltaTime);
+                        enemyAnimatorManager.anim.CrossFade(currentAttack.actionAnimation, 0.2f);
                         enemyManager.isPreformingAction = true;
                         enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
                         currentAttack = null;

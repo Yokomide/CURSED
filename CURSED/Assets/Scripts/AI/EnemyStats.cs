@@ -4,44 +4,53 @@ using UnityEngine;
 
 
 
-    public class EnemyStats : CharacterStats
+public class EnemyStats : CharacterStats
+{
+    public HealthBar healthBar;
+    public bool isDead;
+    [HideInInspector] public Animator anim;
+    void Start()
     {
-        public HealthBar healthBar;
-        [HideInInspector]public Animator anim;
-        void Start()
-        {
-            anim = GetComponent<Animator>();
-            maxHealth = SetMaxHealthFromHealthLevel();
-            currentHealth = maxHealth;
-           // healthBar.SetMaxHealth(maxHealth);
-        }
+        anim = GetComponent<Animator>();
+        maxHealth = SetMaxHealthFromHealthLevel();
+        currentHealth = maxHealth;
+        // healthBar.SetMaxHealth(maxHealth);
+    }
 
-        private int SetMaxHealthFromHealthLevel()
-        {
-            maxHealth = healthLevel * 10;
-            return maxHealth;
-        }
+    private int SetMaxHealthFromHealthLevel()
+    {
+        maxHealth = healthLevel * 10;
+        return maxHealth;
+    }
 
-        public void TakeDamage(int damage)
+    public void TakeDamage(int damage)
+    {
+        if (!isDead)
         {
             currentHealth = currentHealth - damage;
 
-        //  healthBar.SetCurrentHealth(currentHealth);
-        if(anim.GetCurrentAnimatorStateInfo(0).IsName("Damage_01"))
-        {
-            anim.Play("Damage_02");
-        }
-        else
-        {
-            anim.Play("Damage_01");
-        }
-
+            //  healthBar.SetCurrentHealth(currentHealth);
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Damage_01"))
+            {
+                anim.Play("Damage_02");
+            }
+            else
+            {
+                anim.Play("Damage_01");
+            }
 
             if (currentHealth <= 0)
             {
-                currentHealth = 0;
-                anim.Play("Death_01");
+                Death();
             }
         }
     }
+    public void Death()
+    {
+        Destroy(gameObject.GetComponent<EnemyManager>());
+        isDead = true;
+        currentHealth = 0;
+        anim.Play("Death_01");
+    }
+}
 

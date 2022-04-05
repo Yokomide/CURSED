@@ -30,10 +30,10 @@ public class EnemyWeaponSlotManager : MonoBehaviour
     }
     private void Start()
     {
-        LoadWeaponsOnBothHands();
+        LoadWeapons();
     }
 
-    public void LoadWeaponsOnBothHands()
+    public void LoadWeapons()
     {
         if (rightHandWeapon != null)
         {
@@ -41,7 +41,7 @@ public class EnemyWeaponSlotManager : MonoBehaviour
         }
         if (leftHandWeapon != null)
         {
-            LoadWeaponOnSlot(leftHandWeapon, false);
+            LoadWeaponOnSlot(leftHandWeapon, true);
         }
     }
     public void LoadWeaponOnSlot(WeaponItem weapon, bool isLeft)
@@ -67,16 +67,24 @@ public class EnemyWeaponSlotManager : MonoBehaviour
         }
         else
         {
-            leftHandDamageCollider = rightHandSlot.currentWeapon.GetComponentInChildren<DamageCollider>();
+            rightHandDamageCollider = rightHandSlot.currentWeapon.GetComponentInChildren<DamageCollider>();
         }
     }
 
-    public void OpenDamageCollider()
+    public void OpenRightDamageCollider()
     {
         rightHandDamageCollider.EnableDamageCollider();
     }
-    public void CloseDamageCollider()
+    public void OpenLeftDamageCollider()
+    {
+        leftHandDamageCollider.EnableDamageCollider();
+    }
+    public void CloseRightDamageCollider()
     {
         rightHandDamageCollider.DisableDamageCollider();
+    }
+    public void CloseLeftDamageCollider()
+    {
+        leftHandDamageCollider.DisableDamageCollider();
     }
 }

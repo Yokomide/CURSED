@@ -17,6 +17,7 @@ public class CombatStanceState : State
         }
         else if(enemyManager.distanceFromTarget > enemyManager.maximumAttackRange)
         {
+            Debug.Log("Èäó");
             return pursueTargetState;
         }
         else

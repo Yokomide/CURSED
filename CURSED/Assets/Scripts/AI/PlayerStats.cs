@@ -8,6 +8,8 @@ namespace MainHero
     {
         public HealthBar healthBar;
         public AnimatorManager animController;
+
+        public bool isDead;
         void Start()
         {
             animController = GetComponent<AnimatorManager>();
@@ -24,20 +26,24 @@ namespace MainHero
 
         public void TakeDamage(int damage)
         {
-            currentHealth = currentHealth - damage;
-
-            healthBar.SetCurrentHealth(currentHealth);
-
-            animController.PlayTargetAnimation("Damage_01", true);
-
-
-            if (currentHealth <= 0)
+            if (!isDead)
             {
-                Death();
+                currentHealth = currentHealth - damage;
+
+                healthBar.SetCurrentHealth(currentHealth);
+
+                animController.PlayTargetAnimation("Damage_01", true);
+
+
+                if (currentHealth <= 0)
+                {
+                    Death();
+                }
             }
         }
         public void Death()
         {
+                isDead = true;
                 currentHealth = 0;
                 animController.PlayTargetAnimation("Death_01", true);
         }

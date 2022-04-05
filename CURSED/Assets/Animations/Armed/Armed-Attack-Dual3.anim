@@ -39534,15 +39534,15 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 1
   m_Events:
-  - time: 0.24948455
-    functionName: OpenDamageCollider
+  - time: 0.23333333
+    functionName: OpenLeftDamageCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.51060385
-    functionName: CloseDamageCollider
+  - time: 0.53333336
+    functionName: CloseLeftDamageCollider
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

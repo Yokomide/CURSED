@@ -55,21 +55,25 @@ public class WeaponSlotManager : MonoBehaviour
         rightHandDamageCollider = rightHandSlot.currentWeapon.GetComponentInChildren<DamageCollider>();
     }
 
-    public void OpenDamageCollider()
+    public void OpenRightDamageCollider()
     {
-        if(playerManager.isUsingRightHand)
-        {
-            rightHandDamageCollider.EnableDamageCollider();
-        }
-        else if(playerManager.isUsingLeftHand)
-        {
-            leftHandDamageCollider.EnableDamageCollider();
-        }
+        rightHandDamageCollider.EnableDamageCollider();
     }
 
-    public void CloseDamageCollider()
+    public void OpenLeftDamageCollider()
     {
+        leftHandDamageCollider.EnableDamageCollider();
+       
+    }
+
+    public void CloseRightDamageCollider()
+    {
+
         rightHandDamageCollider.DisableDamageCollider();
+    }
+
+    public void CloseLeftDamageCollider()
+    {
         leftHandDamageCollider.DisableDamageCollider();
     }
 
