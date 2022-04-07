@@ -19,8 +19,8 @@ TagManager:
   - Player
   - Enemy
   - Ground
-  - 
-  - 
+  - Character
+  - Character Collision Blocker
   - 
   - 
   - 
@@ -44,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 3395633773
     locked: 0

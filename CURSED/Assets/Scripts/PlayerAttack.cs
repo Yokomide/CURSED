@@ -29,11 +29,15 @@ namespace MainHero
                 animController.anim.SetBool("canDoCombo", false);
                 if (lastAttack == weapon.OH_Light_Attack_1)
                 {
+
+                   Debug.Log(lastAttack);
                    animController.PlayTargetAnimation(weapon.OH_Light_Attack_2, true);
                    lastAttack = weapon.OH_Light_Attack_2;
+
                 }
                 else if (lastAttack == weapon.OH_Light_Attack_2)
                 {
+                    Debug.Log(lastAttack);
                     animController.PlayTargetAnimation(weapon.OH_Light_Attack_3, true);
                 }
             }

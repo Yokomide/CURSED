@@ -9,6 +9,9 @@ namespace MainHero
         public HealthBar healthBar;
         public AnimatorManager animController;
 
+        [SerializeField]
+        private GameManager _gameManager;
+
         public bool isDead;
         void Start()
         {
@@ -46,6 +49,8 @@ namespace MainHero
                 isDead = true;
                 currentHealth = 0;
                 animController.PlayTargetAnimation("Death_01", true);
+                _gameManager.EndGame();
+                
         }
     }
 }
