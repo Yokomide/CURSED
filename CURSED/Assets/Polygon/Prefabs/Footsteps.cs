@@ -29,6 +29,6 @@ public class Footsteps : MonoBehaviour
 
     private AudioClip GetRandomStepClip()
     {
-        return clips[Random.Range(0, 10)];
+        return clips[Random.Range(0, 4)];
     }
 }

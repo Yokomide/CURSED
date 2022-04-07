@@ -6,6 +6,7 @@ public class PursueTargetState : State
 {
 
     public CombatStanceState combatStanceState;
+    public IdleState idleState;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
         if (enemyManager.isPreformingAction)
@@ -19,7 +20,6 @@ public class PursueTargetState : State
             enemyAnimatorManager.anim.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
         }
 
-
         HandleRotateTowardsTarget(enemyManager);
 
         enemyManager.navMeshAgent.transform.localPosition = Vector3.zero;
@@ -28,11 +28,16 @@ public class PursueTargetState : State
         {
             return combatStanceState;
         }
+        // else if(enemyManager.distanceFromTarget >= enemyManager.maximumDistanceForPursueTarget)
+        // {
+        //     enemyManager.currentTarget = null;
+        //     HandleRotateTowardsTarget(enemyManager);
+        //     return idleState;
+        // }
         else
         {
             return this;
         }
-
     }
 
     private void HandleRotateTowardsTarget(EnemyManager enemyManager)

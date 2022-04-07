@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 1362253108213715199}
   - component: {fileID: 1106337648264764012}
   - component: {fileID: 6851292230572846037}
+  - component: {fileID: 8366109077464257718}
   m_Layer: 8
   m_Name: Skeleton1 1
   m_TagString: Enemy
@@ -129,6 +130,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   enemyRigidBody: {fileID: 0}
   distanceFromTarget: 0
+  maximumDistanceForPursueTarget: 10.49
   rotationSpeed: 25
   maximumAttackRange: 1.5
   detectionRadius: 5
@@ -148,9 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f59ce89045ecd47ab1e6ef529a8ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &1362253108213715198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +196,7 @@ MonoBehaviour:
   maxStamina: 0
   currentStamina: 0
   healthBar: {fileID: 0}
+  isDead: 0
   anim: {fileID: 0}
 --- !u!114 &6851292230572846037
 MonoBehaviour:
@@ -212,6 +212,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHandWeapon: {fileID: 11400000, guid: d3f564ed27a963d4bbf6d8ef175b79a4, type: 2}
   leftHandWeapon: {fileID: 0}
+--- !u!114 &8366109077464257718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362253108213715192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d558a86d985cb4a99929dbd598b2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 9ea11a2d13d536e4e8441a0f5895995c, type: 3}
+  - {fileID: 8300000, guid: 203ac8b6f07070e4f93f1c1a6fff06c3, type: 3}
+  - {fileID: 8300000, guid: ac6649006dbee9e4685752e124111da7, type: 3}
+  - {fileID: 8300000, guid: f42914d98b070f741b2feee96a2988ee, type: 3}
 --- !u!1 &1362253108213716854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,6 +3035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatStanceState: {fileID: 3605717835106648998}
+  idleState: {fileID: 3605717833768869540}
 --- !u!1 &3605717834725689238
 GameObject:
   m_ObjectHideFlags: 0

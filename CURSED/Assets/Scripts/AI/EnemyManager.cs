@@ -20,18 +20,15 @@ public class EnemyManager : CharacterManager
     public Rigidbody enemyRigidBody;
 
     public float distanceFromTarget;
+    public float maximumDistanceForPursueTarget = 15;
     public float rotationSpeed = 25;
     public float maximumAttackRange = 2.5f;
-
-
 
     [Header("A.I. Settings")]
     public float detectionRadius = 10;
     public float maximumDetectionAngle = 50;
     public float minimumDetectionAngle = -50;
     public float viewableAngle;
-
-
     public float currentRecoveryTime = 0;
     private void Awake() 
     {
@@ -41,7 +38,6 @@ public class EnemyManager : CharacterManager
         navMeshAgent = GetComponentInChildren<NavMeshAgent>();
         navMeshAgent.enabled = false;
         enemyRigidBody = GetComponent<Rigidbody>();
-
     }
 
     private void Start()
@@ -82,7 +78,6 @@ public class EnemyManager : CharacterManager
         {
             currentRecoveryTime -= Time.deltaTime;
         }
-
         if (isPreformingAction)
         {
             if(currentRecoveryTime <= 0)
@@ -91,5 +86,4 @@ public class EnemyManager : CharacterManager
             }
         }
     }
-    
 }
