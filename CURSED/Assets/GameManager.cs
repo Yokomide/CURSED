@@ -7,7 +7,12 @@ public class GameManager : MonoBehaviour
 {
    bool gameHasEnded = false;
    public float restartDelay;
-   public void EndGame()
+
+    private void Start()
+    {
+        LevelManager.Instance.GetComponentInChildren<Settings>().PostProcessState();
+    }
+    public void EndGame()
     {
         if(gameHasEnded == false)
         {
