@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageFX: {fileID: 0}
-  currentWeaponDamage: 55
+  currentWeaponDamage: 30
