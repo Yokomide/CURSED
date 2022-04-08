@@ -22,18 +22,13 @@ public class PursueTargetState : State
 
         HandleRotateTowardsTarget(enemyManager);
 
-        enemyManager.navMeshAgent.transform.localPosition = Vector3.zero;
-        enemyManager.navMeshAgent.transform.localRotation = Quaternion.identity;
+        // enemyManager.navMeshAgent.transform.localPosition = Vector3.zero;
+        // enemyManager.navMeshAgent.transform.localRotation = Quaternion.identity;
+
         if (enemyManager.distanceFromTarget <= enemyManager.maximumAttackRange)
         {
             return combatStanceState;
         }
-        // else if(enemyManager.distanceFromTarget >= enemyManager.maximumDistanceForPursueTarget)
-        // {
-        //     enemyManager.currentTarget = null;
-        //     HandleRotateTowardsTarget(enemyManager);
-        //     return idleState;
-        // }
         else
         {
             return this;

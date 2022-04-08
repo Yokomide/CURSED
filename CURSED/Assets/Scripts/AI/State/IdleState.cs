@@ -8,6 +8,9 @@ public class IdleState : State
     public LayerMask detectionLayer;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+        if(enemyManager.isInteracting)
+            return this;
+            
         Collider[] colliders = Physics.OverlapSphere(transform.position, enemyManager.detectionRadius, detectionLayer);
         for (int i = 0; i < colliders.Length; i++)
         {

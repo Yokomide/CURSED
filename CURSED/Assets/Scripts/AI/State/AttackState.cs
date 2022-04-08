@@ -7,36 +7,60 @@ public class AttackState : State
     public CombatStanceState combatStanceState;
     public EnemyAttackAction[] enemyAttacks;
     public EnemyAttackAction currentAttack;
+    public bool isComboing = false;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+        if (enemyManager.isInteracting)
+            return this;
+
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - transform.position;
         float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
 
-        if (enemyManager.isPreformingAction)
+        if (enemyManager.isPreformingAction && !isComboing)
+        {
             return combatStanceState;
+        }
+        else if(isComboing)
+        {
+            enemyAnimatorManager.anim.CrossFade(currentAttack.actionAnimation, 0.2f);
+            isComboing = false;
+        }
+            
 
         if (currentAttack != null)
         {
-            if(enemyManager.distanceFromTarget < currentAttack.minimumDistanceNeededToAttack)
+            if (enemyManager.distanceFromTarget < currentAttack.minimumDistanceNeededToAttack)
             {
                 return this;
             }
-            else if (enemyManager.distanceFromTarget <currentAttack.maximumDistanceNeededToAttack)
+            else if (enemyManager.distanceFromTarget < currentAttack.maximumDistanceNeededToAttack)
             {
                 if (enemyManager.viewableAngle <= currentAttack.maximumAttackAngle && enemyManager.viewableAngle >= currentAttack.minimumAttackAngle)
-                { 
-                    if(enemyManager.currentRecoveryTime<=0 && enemyManager.isPreformingAction == false)
+                {
+                    if (enemyManager.currentRecoveryTime <= 0 && enemyManager.isPreformingAction == false)
                     {
                         enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
                         //enemyAnimatorManager.anim.SetFloat("Horizontal", 0, 0.1f, Time.deltaTime);
                         enemyAnimatorManager.anim.CrossFade(currentAttack.actionAnimation, 0.2f);
                         enemyManager.isPreformingAction = true;
-                        enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
-                        currentAttack = null;
-                        return combatStanceState;
+
+                        if (currentAttack.canCombo)
+                        {
+                            currentAttack = currentAttack.comboAction;
+                            return this;
+                        }
+                        else
+                        {
+                            enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
+                            currentAttack = null;
+                            return combatStanceState;
+                        }
+
+
+
                     }
                 }
-                
+
             }
         }
         else
@@ -90,7 +114,7 @@ public class AttackState : State
                 }
             }
         }
-        
-        
+
+
     }
 }

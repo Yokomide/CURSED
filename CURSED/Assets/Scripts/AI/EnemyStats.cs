@@ -6,15 +6,32 @@ using UnityEngine;
 
 public class EnemyStats : CharacterStats
 {
-    public HealthBar healthBar;
+    EnemyBossManager enemyBossManager;
     public bool isDead;
+    public bool isBoss;
+    WorldEventManager worldEventManager;
+
+    public UIEnemyHealthBar enemyHealthBar;
     [HideInInspector] public Animator anim;
+
+    private void Awake()
+    {
+        maxHealth = SetMaxHealthFromHealthLevel();
+        currentHealth = maxHealth;
+        enemyBossManager = GetComponent<EnemyBossManager>();
+        worldEventManager  = FindObjectOfType<WorldEventManager>();
+    }
     void Start()
     {
         anim = GetComponent<Animator>();
-        maxHealth = SetMaxHealthFromHealthLevel();
-        currentHealth = maxHealth;
-        // healthBar.SetMaxHealth(maxHealth);
+        if (!isBoss)
+        {
+            enemyHealthBar.SetMaxHealth(maxHealth);
+        }
+        else if (isBoss && enemyBossManager != null)
+        {
+            enemyBossManager.UpdateBossHealthBar(currentHealth);
+        }
     }
 
     private int SetMaxHealthFromHealthLevel()
@@ -25,11 +42,20 @@ public class EnemyStats : CharacterStats
 
     public void TakeDamage(int damage)
     {
+
         if (!isDead)
         {
             currentHealth = currentHealth - damage;
+            if (!isBoss)
+            {
+                enemyHealthBar.SetHealth(currentHealth);
+            }
+            else if (isBoss && enemyBossManager != null)
+            {
+                enemyBossManager.UpdateBossHealthBar(currentHealth);
+            }
 
-            //  healthBar.SetCurrentHealth(currentHealth);
+
             if (anim.GetCurrentAnimatorStateInfo(0).IsName("Damage_01"))
             {
                 anim.Play("Damage_02");
@@ -38,6 +64,7 @@ public class EnemyStats : CharacterStats
             {
                 anim.Play("Damage_01");
             }
+
 
             if (currentHealth <= 0)
             {
@@ -50,6 +77,16 @@ public class EnemyStats : CharacterStats
         Destroy(gameObject.GetComponent<EnemyManager>());
         isDead = true;
         currentHealth = 0;
+        if (!isBoss)
+        {
+            enemyHealthBar.SetHealth(currentHealth);
+
+        }
+        else if (isBoss && enemyBossManager != null)
+        {
+            enemyBossManager.UpdateBossHealthBar(currentHealth);
+            worldEventManager.BossHasBeenDefeated();
+        }
         anim.Play("Death_01");
     }
 }

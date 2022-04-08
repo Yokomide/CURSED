@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Attack 02
   m_EditorClassIdentifier: 
   actionAnimation: ArmedAttackDual3
+  canCombo: 0
+  comboAction: {fileID: 11400000, guid: 65e9d01f19f56f34c9ffd72362c20045, type: 2}
   attackScore: 3
   recoveryTime: 2
   maximumAttackAngle: 35

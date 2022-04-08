@@ -9,6 +9,9 @@ public class CombatStanceState : State
     public PursueTargetState pursueTargetState;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
+        if(enemyManager.isInteracting)
+            return this;
+        
         enemyManager.distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
 
         if (enemyManager.currentRecoveryTime <=0 && enemyManager.distanceFromTarget<= enemyManager.maximumAttackRange)
