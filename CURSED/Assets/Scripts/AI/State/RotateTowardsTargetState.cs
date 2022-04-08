@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateTowardsTargetState : State
 {
-    CombatStanceState combatStanceState;
+    public CombatStanceState combatStanceState;
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
         enemyAnimatorManager.anim.SetFloat("Vertical",0);

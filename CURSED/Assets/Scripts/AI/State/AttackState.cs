@@ -58,6 +58,7 @@ public class AttackState : State
         enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation,true);
         enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
         hasPerformedAttack = true;
+        currentAttack = null;
     }
     private void AttackTargetWithCombo(EnemyAnimatorManager enemyAnimatorManager ,EnemyManager enemyManager)
     {
