@@ -8,29 +8,31 @@ public class EnemyManager : CharacterManager
     EnemyLocomotionManager enemyLocomotionManager;
     EnemyAnimatorManager enemyAnimatorManager;
     EnemyStats enemyStats;
-    
+
+    public State currentState;
+    public CharacterStats currentTarget;
+    public NavMeshAgent navMeshAgent;
+    public Rigidbody enemyRigidBody;
 
     public bool isPreformingAction;
     public bool isInteracting;
-
-    public NavMeshAgent navMeshAgent;
-    public State currentState;
-    public CharacterStats currentTarget;
-
-    public Rigidbody enemyRigidBody;
-
-    public float distanceFromTarget;
-    public float maximumDistanceForPursueTarget = 15;
     public float rotationSpeed = 25;
     public float maximumAttackRange = 2.5f;
+    [HideInInspector]public float distanceFromTarget;
 
+    [Header("Combat Flags")]
+    public bool canDoCombo;
+    
     [Header("A.I. Settings")]
     public float detectionRadius = 10;
     public float maximumDetectionAngle = 50;
     public float minimumDetectionAngle = -50;
-    public float viewableAngle;
+    [HideInInspector]public float viewableAngle;
     public float currentRecoveryTime = 0;
-    private void Awake() 
+    [Header("A.I. Combat Settings")]
+    public bool allowAIPerformCombos;
+    public float comboLikelyHood;
+    private void Awake()
     {
         enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
         enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
@@ -43,15 +45,19 @@ public class EnemyManager : CharacterManager
     private void Start()
     {
         enemyRigidBody.isKinematic = false;
-        
+
     }
-    private void Update() 
+    private void Update()
     {
         HandleRecoveryTimer();
         HandleStateMachine();
-       // isInteracting = enemyAnimatorManager.anim.GetBool("IsInteracting");
+
+        isInteracting = enemyAnimatorManager.anim.GetBool("IsInteracting");
+        canDoCombo = enemyAnimatorManager.anim.GetBool("canDoCombo");
+        canRotate = enemyAnimatorManager.anim.GetBool("canRotate");
+        enemyAnimatorManager.anim.SetBool("isDead", enemyStats.isDead);
     }
-    private void LateUpdate() 
+    private void LateUpdate()
     {
         navMeshAgent.transform.localPosition = Vector3.zero;
         navMeshAgent.transform.localRotation = Quaternion.identity;
@@ -83,7 +89,7 @@ public class EnemyManager : CharacterManager
         }
         if (isPreformingAction)
         {
-            if(currentRecoveryTime <= 0)
+            if (currentRecoveryTime <= 0)
             {
                 isPreformingAction = false;
             }

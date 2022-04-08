@@ -4,117 +4,84 @@ using UnityEngine;
 
 public class AttackState : State
 {
+    public RotateTowardsTargetState rotateTowardsTargetState;
     public CombatStanceState combatStanceState;
-    public EnemyAttackAction[] enemyAttacks;
+    public PursueTargetState pursueTargetState;
     public EnemyAttackAction currentAttack;
-    public bool isComboing = false;
+    public bool willDoComboOnNextAttack = false;
+    public bool hasPerformedAttack = false;
+
+
     public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
-        if (enemyManager.isInteracting)
+        enemyManager.distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+
+        RotateTowardsTargetWhilstAttacking(enemyManager);   
+        
+        if(enemyManager.distanceFromTarget > enemyManager.maximumAttackRange)
+        {
+            return pursueTargetState;
+        }
+        if (willDoComboOnNextAttack &&enemyManager.canDoCombo)
+        {
+
+        }
+        if(!hasPerformedAttack)
+        {
+            AttackTarget(enemyAnimatorManager,enemyManager);
+            RollForComboChance(enemyManager); 
+        }
+        if(willDoComboOnNextAttack && hasPerformedAttack)
+        {
             return this;
-
-        Vector3 targetDirection = enemyManager.currentTarget.transform.position - transform.position;
-        float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
-
-        if (enemyManager.isPreformingAction && !isComboing)
-        {
-            return combatStanceState;
         }
-        else if(isComboing)
-        {
-            enemyAnimatorManager.anim.CrossFade(currentAttack.actionAnimation, 0.2f);
-            isComboing = false;
-        }
-            
-
-        if (currentAttack != null)
-        {
-            if (enemyManager.distanceFromTarget < currentAttack.minimumDistanceNeededToAttack)
-            {
-                return this;
-            }
-            else if (enemyManager.distanceFromTarget < currentAttack.maximumDistanceNeededToAttack)
-            {
-                if (enemyManager.viewableAngle <= currentAttack.maximumAttackAngle && enemyManager.viewableAngle >= currentAttack.minimumAttackAngle)
-                {
-                    if (enemyManager.currentRecoveryTime <= 0 && enemyManager.isPreformingAction == false)
-                    {
-                        enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
-                        //enemyAnimatorManager.anim.SetFloat("Horizontal", 0, 0.1f, Time.deltaTime);
-                        enemyAnimatorManager.anim.CrossFade(currentAttack.actionAnimation, 0.2f);
-                        enemyManager.isPreformingAction = true;
-
-                        if (currentAttack.canCombo)
-                        {
-                            currentAttack = currentAttack.comboAction;
-                            return this;
-                        }
-                        else
-                        {
-                            enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
-                            currentAttack = null;
-                            return combatStanceState;
-                        }
-
-
-
-                    }
-                }
-
-            }
-        }
-        else
-        {
-            GetNewAttack(enemyManager);
-
-        }
-
-        return combatStanceState;
+        return rotateTowardsTargetState;
+        
     }
-    private void GetNewAttack(EnemyManager enemyManager)
+    private void RotateTowardsTargetWhilstAttacking(EnemyManager enemyManager)
     {
-        Vector3 targersDirection = enemyManager.currentTarget.transform.position - transform.position;
-        float viewableAngle = Vector3.Angle(targersDirection, transform.forward);
-        enemyManager.distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, transform.position);
-
-        int maxScore = 0;
-        for (int i = 0; i < enemyAttacks.Length; i++)
+        if (enemyManager.canRotate && enemyManager.isInteracting)
         {
-            EnemyAttackAction enemyAttackAction = enemyAttacks[i];
-
-            if (enemyManager.distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack && enemyManager.distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
+            Vector3 direction = enemyManager.currentTarget.transform.position = transform.position;
+            direction.y = 0;
+            direction.Normalize();
+            if (direction == Vector3.zero)
             {
-                if (viewableAngle <= enemyAttackAction.maximumAttackAngle && viewableAngle >= enemyAttackAction.minimumAttackAngle)
-                {
-                    maxScore += enemyAttackAction.attackScore;
-                }
+                direction = transform.forward;
+            }
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, enemyManager.rotationSpeed / Time.deltaTime);
+        }
+    }
+    private void AttackTarget(EnemyAnimatorManager enemyAnimatorManager,EnemyManager enemyManager)
+    {
+        enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation,true);
+        enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
+        hasPerformedAttack = true;
+    }
+    private void AttackTargetWithCombo(EnemyAnimatorManager enemyAnimatorManager ,EnemyManager enemyManager)
+    {
+        willDoComboOnNextAttack = false;
+        enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation,true);
+        enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
+        currentAttack = null;
+    }
+    private void RollForComboChance(EnemyManager enemyManager)
+    {
+        float comboChance = Random.Range(0,100);
+
+        if(enemyManager.allowAIPerformCombos && comboChance <= enemyManager.comboLikelyHood)
+        {
+            if(currentAttack.comboAction != null)
+            {
+                willDoComboOnNextAttack = true;
+                currentAttack = currentAttack.comboAction;
+            }
+            else
+            {
+                willDoComboOnNextAttack = false;
+                currentAttack = null;
             }
         }
-
-        int randomValue = Random.Range(0, maxScore);
-        int temporaryScore = 0;
-        for (int i = 0; i < enemyAttacks.Length; i++)
-        {
-            EnemyAttackAction enemyAttackAction = enemyAttacks[i];
-
-            if (enemyManager.distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack && enemyManager.distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
-            {
-                if (viewableAngle <= enemyAttackAction.maximumAttackAngle && viewableAngle >= enemyAttackAction.minimumAttackAngle)
-                {
-                    if (currentAttack != null)
-                    {
-                        return;
-                    }
-                    temporaryScore += enemyAttackAction.attackScore;
-
-                    if (temporaryScore > randomValue)
-                    {
-                        currentAttack = enemyAttackAction;
-                    }
-                }
-            }
-        }
-
-
     }
 }
