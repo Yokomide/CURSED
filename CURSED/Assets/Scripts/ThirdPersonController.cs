@@ -127,6 +127,7 @@ namespace MainHero
 			_hasAnimator = TryGetComponent(out animator);
 			canDoCombo = animator.GetBool("canDoCombo");
 			isInteracting = animator.GetBool("isInteracting");
+			_playerStats.RegenerateStamina();
 			PlayerGravity();
 			GroundedCheck();
 			Move();
@@ -199,7 +200,7 @@ namespace MainHero
 				}
 				else
 				{
-					_speed = targetSpeed;
+					_speed = targetSpeed;	
 				}
 				_animationBlend = Mathf.Lerp(_animationBlend, inputMagnitude * targetSpeed, Time.deltaTime * SpeedChangeRate);
 
@@ -218,10 +219,12 @@ namespace MainHero
 
 				_controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
+				
 				if (_hasAnimator)
 				{
 					animator.SetFloat(_animIDSpeed, Mathf.Clamp(_animationBlend, 0f, 1.7f));
 					animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+
 				}
 			}
 			else 

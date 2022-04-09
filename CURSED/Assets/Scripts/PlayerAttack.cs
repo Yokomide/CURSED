@@ -13,10 +13,12 @@ namespace MainHero
         public string lastAttack;
         public bool comboFlag;
 
+        private PlayerStats playerStats;
         private PlayerInventory playerInventory;
 
         private void Start()
         {
+            playerStats = GetComponent<PlayerStats>();
             controller = GetComponent<ThirdPersonController>();
             animController = GetComponent<AnimatorManager>();
             playerInventory = GetComponent<PlayerInventory>();
@@ -30,14 +32,14 @@ namespace MainHero
                 if (lastAttack == weapon.OH_Light_Attack_1)
                 {
 
-                   Debug.Log(lastAttack);
-                   animController.PlayTargetAnimation(weapon.OH_Light_Attack_2, true);
+                 //   playerStats.StaminaWaste(20);
+                    animController.PlayTargetAnimation(weapon.OH_Light_Attack_2, true);
                    lastAttack = weapon.OH_Light_Attack_2;
 
                 }
                 else if (lastAttack == weapon.OH_Light_Attack_2)
                 {
-                    Debug.Log(lastAttack);
+                 //   playerStats.StaminaWaste(30);
                     animController.PlayTargetAnimation(weapon.OH_Light_Attack_3, true);
                 }
             }
@@ -45,21 +47,25 @@ namespace MainHero
 
         public void LightAttackButtonPressed()
         {
-            if(controller.canDoCombo)
-            {
-                comboFlag = true;
-                WeaponCombo(playerInventory.rightWeapon);
-                comboFlag = false;
-            }
+            if (playerStats.currentStamina < 20) return;
             else
             {
-                if(controller.isInteracting)
-                {
-                    return;
-                }
                 if (controller.canDoCombo)
-                    return;
-                HandleLightAttack(playerInventory.rightWeapon);
+                {
+                    comboFlag = true;
+                    WeaponCombo(playerInventory.rightWeapon);
+                    comboFlag = false;
+                }
+                else
+                {
+                    if (controller.isInteracting)
+                    {
+                        return;
+                    }
+                    if (controller.canDoCombo)
+                        return;
+                    HandleLightAttack(playerInventory.rightWeapon);
+                }
             }
         }
         public void HeavyAttackButtonPressed()
@@ -70,6 +76,9 @@ namespace MainHero
             //    WeaponCombo(playerInventory.rightWeapon);
             //    comboFlag = false;
             //}
+            if (playerStats.currentStamina < 30) return;
+            else
+            {
                 if (controller.isInteracting)
                 {
                     return;
@@ -77,16 +86,19 @@ namespace MainHero
                 if (controller.canDoCombo)
                     return;
                 HandleHeavyAttack(playerInventory.rightWeapon);
+            }
             
         }
         public void HandleLightAttack(WeaponItem weapon)
     {
+           // playerStats.StaminaWaste(20);
             animController.PlayTargetAnimation(weapon.OH_Light_Attack_1, true);
             lastAttack = weapon.OH_Light_Attack_1;
     }
 
     public void HandleHeavyAttack(WeaponItem weapon)
     {
+           // playerStats.StaminaWaste(30);
             animController.PlayTargetAnimation(weapon.OH_Heavy_Attack_1, true);
             lastAttack = weapon.OH_Heavy_Attack_1;
         }

@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Footsteps : MonoBehaviour
 {
+    private Animator anim;
+
     [SerializeField]
+
+
     private AudioClip[] clips;
 
     private AudioSource audioSource;
@@ -13,11 +17,13 @@ public class Footsteps : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
-    private void Step()
+    public void Step()
     {
-        AudioClip clip = GetRandomStepClip();
-        audioSource.PlayOneShot(clip);
+            AudioClip clip = GetRandomStepClip();
+            audioSource.PlayOneShot(clip);
+
     }
 
     public void Fall()

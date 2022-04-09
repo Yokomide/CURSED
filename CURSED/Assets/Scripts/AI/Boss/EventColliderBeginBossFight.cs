@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class EventColliderBeginBossFight : MonoBehaviour
 {
+    [SerializeField]
     WorldEventManager worldEventManager;
-    void Awake()
-    {
-        worldEventManager  = FindObjectOfType<WorldEventManager>();
-    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(!worldEventManager.bossHasBeenDefeated && other.tag == "Player")
