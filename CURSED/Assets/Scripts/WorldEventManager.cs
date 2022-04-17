@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WorldEventManager : MonoBehaviour
 {
+    public List<FogWall> fogWalls;
     public UIBossHealthBar bossHealthBar;
     public EnemyBossManager boss;
 
@@ -20,11 +21,21 @@ public class WorldEventManager : MonoBehaviour
         bossFightIsActive = true;
         bossHasBeenAwakened = true;
         bossHealthBar.SetUIHealthBarToActive();
+
+        foreach (var FogWall in fogWalls)
+        {
+            FogWall.ActivateFogWall();
+        }
     }
     public void BossHasBeenDefeated()
     {
         bossHasBeenDefeated = true;
         bossFightIsActive = false;
         bossHealthBar.SetUIHealthBarToInactive();
+
+        foreach (var FogWall in fogWalls)
+        {
+            FogWall.DeactivateFogWall();
+        }
     }
 }
