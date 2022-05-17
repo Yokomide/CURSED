@@ -2889,6 +2889,8 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+  stoneRest: {fileID: 0}
+  vendor: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &6322069975059321381
 MonoBehaviour:
@@ -3071,6 +3073,9 @@ MonoBehaviour:
   rightWeapon: {fileID: 11400000, guid: 115df0f5f535a3f4eae648c923aab312, type: 2}
   leftWeapon: {fileID: 0}
   unarmedWeapon: {fileID: 11400000, guid: 75cfa81081d407a41b771bbb678c22d5, type: 2}
+  swordWeapon: {fileID: 11400000, guid: 115df0f5f535a3f4eae648c923aab312, type: 2}
+  axeWeapon: {fileID: 11400000, guid: d3487fa56363c894aaaef4c403f0bd97, type: 2}
+  spearWeapon: {fileID: 11400000, guid: 971715b52be537f4ba85a3d9168df718, type: 2}
   changeButton: {fileID: 0}
   weaponsInRightHandSlots:
   - {fileID: 11400000, guid: 115df0f5f535a3f4eae648c923aab312, type: 2}
