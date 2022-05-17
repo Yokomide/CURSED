@@ -10,6 +10,8 @@ public class PlayerInventory : MonoBehaviour
     public WeaponItem leftWeapon;
     public WeaponItem unarmedWeapon;
 
+    public GameObject changeButton;
+
     public WeaponItem[] weaponsInRightHandSlots = new WeaponItem[1];
     public WeaponItem[] weaponsInLeftHandSlots = new WeaponItem[1];
 
@@ -26,10 +28,25 @@ public class PlayerInventory : MonoBehaviour
     }
 
     private void Start()
-    {   
+    {
         rightWeapon = weaponsInRightHandSlots[currentRightWeaponIndex];
         weaponSlotManager.LoadWeaponOnSlot(weaponsInRightHandSlots[currentRightWeaponIndex], false);
-        leftWeapon = unarmedWeapon;        
+        leftWeapon = unarmedWeapon;
+        CheckWeaponInventory();
+    }
+
+
+    public void CheckWeaponInventory()
+    {
+        if (weaponsInRightHandSlots.Length == 1)
+        {
+            changeButton.SetActive(false);
+        }
+        else
+        {
+            changeButton.SetActive(true);
+        }
+
     }
 
 

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
   itemName: 
-  modelPrefab: {fileID: 0}
+  modelPrefab: {fileID: 6692889402664726467, guid: 39aa9248d4217474cacc1c89ba40da8a,
+    type: 3}
   isUnarmed: 0
   OH_Light_Attack_1: 
   OH_Light_Attack_2: 
