@@ -2889,6 +2889,7 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+  stoneRest: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &6322069975059321381
 MonoBehaviour:

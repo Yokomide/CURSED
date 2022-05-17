@@ -66,6 +66,7 @@ namespace MainHero
 		public bool LockCameraPosition = false;
 
 		public StoneRest stoneRest;
+		public Vendor vendor;
 		// cinemachine
 		private float _cinemachineTargetYaw;
 		private float _cinemachineTargetPitch;
@@ -305,6 +306,11 @@ namespace MainHero
 				stoneRest.UIButtons.SetActive(false);
 				stoneRest.mainCamera.SetActive(false);
 				stoneRest.StartRest();
+			}
+			if (vendor.isNearVendor)
+			{
+				vendor.tradeMenu.SetActive(true);
+				vendor.UIButtons.SetActive(false);
 			}
 		}
 

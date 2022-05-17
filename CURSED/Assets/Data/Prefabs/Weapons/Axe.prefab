@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageFX: {fileID: 3581679924525853300}
-  currentWeaponDamage: 25
+  currentWeaponDamage: 35
 --- !u!1001 &3580835508883630722
 PrefabInstance:
   m_ObjectHideFlags: 0
