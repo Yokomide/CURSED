@@ -9,6 +9,7 @@ public class StoneRest : MonoBehaviour
 
     public PlayerStats playerStats;
 
+    public GameObject Enemies;
     public GameObject interactButton;
     public GameObject UIButtons;
     public GameObject restMenu;
@@ -53,9 +54,15 @@ public class StoneRest : MonoBehaviour
         mainCharacter.transform.rotation = restPoint.transform.rotation;
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         mainCharacter.GetComponent<AnimatorManager>().PlayTargetAnimation("Rest", true);
-       
+        RespawnEnemies();
         ResetPlayerStats();
 
+    }
+    public void RespawnEnemies()
+    {
+        Destroy(GameObject.Find("Enemy(Clone)"));
+        Destroy(GameObject.Find("Enemy"));
+        Instantiate(Enemies);
     }
     public void ResetPlayerStats()
     {
