@@ -10,11 +10,19 @@ public class TeleportStone : MonoBehaviour
     public GameObject moveButton;
     public StoneRest stoneRest;
     public GameObject Fade;
+
+    private GameManager gm;
+    private void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+    }
     public void OnChooseButtonPressed()
     {
         restPlaces.SetActive(true);
         moveButton.SetActive(false);
     }
+
+
     public void OnTeleportButtonPressed(int point)
     {
         Fade.GetComponent<Animator>().Play("TransitionFadeOut", - 1, 0f);
@@ -23,12 +31,15 @@ public class TeleportStone : MonoBehaviour
         if (point == 0 )
         {
             restPoint[1].transform.GetChild(0).gameObject.SetActive(false);
+            gm.lastCheckPointPos = restPoint[0].transform.position;
         }
         else
         {
             restPoint[0].transform.GetChild(0).gameObject.SetActive(false);
+            gm.lastCheckPointPos = restPoint[1].transform.position;
         }
        // restPoint[point].transform.GetChild(0).gameObject.SetActive(true);
+
         stoneRest.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         stoneRest.restMenu.SetActive(false);
         stoneRest.UIButtons.SetActive(true);

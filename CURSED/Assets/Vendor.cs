@@ -15,12 +15,6 @@ public class Vendor : MonoBehaviour
     public bool isNearVendor;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -55,7 +49,8 @@ public class Vendor : MonoBehaviour
 
     public void BuySpear()
     {
-
+        mainCharacter.GetComponent<PlayerInventory>().addSpear();
+        mainCharacter.GetComponent<PlayerInventory>().CheckWeaponInventory();
     }
 
     public void BuyFlask()

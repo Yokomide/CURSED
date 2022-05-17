@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
+    [SerializeField]
     bool gameHasEnded = false;
     public float restartDelay;
     public Vector3 lastCheckPointPos;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
     private void Start()
     {
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         
         LevelManager.Instance.LoadScene("Village");
+        gameHasEnded = false;
 
     }
 }

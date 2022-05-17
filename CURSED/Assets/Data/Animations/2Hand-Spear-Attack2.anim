@@ -94993,6 +94993,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 1
   m_Events:
   - time: 0.56666666
+    functionName: StaminaWaste
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 20
+    messageOptions: 0
+  - time: 0.56666666
     functionName: OpenRightDamageCollider
     data: 
     objectReferenceParameter: {fileID: 0}

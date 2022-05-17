@@ -15,12 +15,13 @@ namespace MainHero
         public float staminaRegenTimer = 0;
 
         [SerializeField]
-        private GameManager _gameManager;
+        private GameManager gm;
 
         private ThirdPersonController _controller;
         public bool isDead;
         void Start()
         {
+            gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
             _controller = GetComponent<ThirdPersonController>();
             animController = GetComponent<AnimatorManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
@@ -86,7 +87,7 @@ namespace MainHero
                 isDead = true;
                 currentHealth = 0;
                 animController.PlayTargetAnimation("Death_01", true);
-                _gameManager.EndGame();
+                gm.EndGame();
                 
         }
     }

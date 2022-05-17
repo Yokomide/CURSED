@@ -154,8 +154,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.069169596, y: 0.8624512, z: 0.20000003}
-  m_Center: {x: -0.0000029578534, y: 1.8045796, z: -0.0000637051}
+  m_Size: {x: 0.069169596, y: 1.3580681, z: 0.20000003}
+  m_Center: {x: -0.0000038252474, y: 1.556794, z: -0.00008196436}
 --- !u!114 &5338368682160923291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageFX: {fileID: 3581679924525853300}
-  currentWeaponDamage: 35
+  currentWeaponDamage: 45
 --- !u!1001 &3580835508883630722
 PrefabInstance:
   m_ObjectHideFlags: 0

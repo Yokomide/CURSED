@@ -300,7 +300,7 @@ namespace MainHero
 
 		public void OnInteractButtonPressed()
 		{
-			if (stoneRest.isStoneRest)
+			if (stoneRest != null && stoneRest.isStoneRest)
 			{
 				stoneRest.restMenu.SetActive(true);
 				stoneRest.UIButtons.SetActive(false);
