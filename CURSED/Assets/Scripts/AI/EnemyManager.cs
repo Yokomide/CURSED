@@ -52,7 +52,7 @@ public class EnemyManager : CharacterManager
         HandleRecoveryTimer();
         HandleStateMachine();
 
-        isInteracting = enemyAnimatorManager.anim.GetBool("IsInteracting");
+        //isInteracting = enemyAnimatorManager.anim.GetBool("IsInteracting");
         canDoCombo = enemyAnimatorManager.anim.GetBool("canDoCombo");
         canRotate = enemyAnimatorManager.anim.GetBool("canRotate");
         enemyAnimatorManager.anim.SetBool("isDead", enemyStats.isDead);
