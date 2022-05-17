@@ -5,9 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-   bool gameHasEnded = false;
-   public float restartDelay;
+    private static GameManager instance;
+    bool gameHasEnded = false;
+    public float restartDelay;
+    public Vector3 lastCheckPointPos;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         LevelManager.Instance.GetComponentInChildren<Settings>().PostProcessState();
@@ -25,5 +39,6 @@ public class GameManager : MonoBehaviour
     {
         
         LevelManager.Instance.LoadScene("Village");
+
     }
 }

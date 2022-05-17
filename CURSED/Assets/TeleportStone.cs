@@ -28,7 +28,12 @@ public class TeleportStone : MonoBehaviour
         {
             restPoint[0].transform.GetChild(0).gameObject.SetActive(false);
         }
-        restPoint[point].transform.GetChild(0).gameObject.SetActive(true);
+       // restPoint[point].transform.GetChild(0).gameObject.SetActive(true);
+        stoneRest.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        stoneRest.restMenu.SetActive(false);
+        stoneRest.UIButtons.SetActive(true);
+        stoneRest.mainCamera.SetActive(true);
+        stoneRest.EndRest();
 
     }
 }

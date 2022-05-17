@@ -9,6 +9,7 @@ public class StoneRest : MonoBehaviour
 
     public PlayerStats playerStats;
 
+    public GameObject[] Cams;
     public GameObject Enemies;
     public GameObject interactButton;
     public GameObject UIButtons;
@@ -18,8 +19,14 @@ public class StoneRest : MonoBehaviour
 
     [SerializeField]
     private GameObject mainCharacter;
+
+    private GameManager gm;
     public bool isStoneRest;
 
+    private void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -41,7 +48,10 @@ public class StoneRest : MonoBehaviour
 
     public void OnExitButtonPressed()
     {
-        transform.GetChild(0).gameObject.SetActive(false);
+
+       Cams[0].SetActive(false);
+       Cams[1].SetActive(false);
+
         restMenu.SetActive(false);
         UIButtons.SetActive(true);
         mainCamera.SetActive(true);
@@ -54,6 +64,7 @@ public class StoneRest : MonoBehaviour
         mainCharacter.transform.rotation = restPoint.transform.rotation;
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         mainCharacter.GetComponent<AnimatorManager>().PlayTargetAnimation("Rest", true);
+        gm.lastCheckPointPos = transform.position;
         RespawnEnemies();
         ResetPlayerStats();
 

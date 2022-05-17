@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class FogWall : MonoBehaviour
 {
+    public GameObject Fog;
     private void Awake() 
     {
-        gameObject.SetActive(false);
+       Fog.SetActive(false);
     }
     public void ActivateFogWall()
     {
-        gameObject.SetActive(true);
+        Fog.SetActive(true);
     }
     public void DeactivateFogWall()
     {
-        gameObject.SetActive(false);
+        Fog.SetActive(false);
     }
 }

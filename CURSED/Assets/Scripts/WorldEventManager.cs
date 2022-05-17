@@ -21,7 +21,6 @@ public class WorldEventManager : MonoBehaviour
         bossFightIsActive = true;
         bossHasBeenAwakened = true;
         bossHealthBar.SetUIHealthBarToActive();
-
         foreach (var FogWall in fogWalls)
         {
             FogWall.ActivateFogWall();
