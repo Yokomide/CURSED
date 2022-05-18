@@ -64,7 +64,7 @@ public class StoneRest : MonoBehaviour
         mainCharacter.transform.rotation = restPoint.transform.rotation;
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         mainCharacter.GetComponent<AnimatorManager>().PlayTargetAnimation("Rest", true);
-        gm.lastCheckPointPos = transform.position;
+        gm.lastCheckPointPos = restPoint.transform.position;
         RespawnEnemies();
         ResetPlayerStats();
 

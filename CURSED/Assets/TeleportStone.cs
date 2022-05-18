@@ -31,12 +31,12 @@ public class TeleportStone : MonoBehaviour
         if (point == 0 )
         {
             restPoint[1].transform.GetChild(0).gameObject.SetActive(false);
-            gm.lastCheckPointPos = restPoint[0].transform.position;
+            gm.lastCheckPointPos = restPoint[0].transform.GetChild(3).gameObject.transform.position;
         }
         else
         {
             restPoint[0].transform.GetChild(0).gameObject.SetActive(false);
-            gm.lastCheckPointPos = restPoint[1].transform.position;
+            gm.lastCheckPointPos = restPoint[1].transform.GetChild(3).gameObject.transform.position;
         }
        // restPoint[point].transform.GetChild(0).gameObject.SetActive(true);
 
