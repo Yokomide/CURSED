@@ -6,11 +6,13 @@ using UnityEngine;
 
 public class EnemyStats : CharacterStats
 {
+
     EnemyBossManager enemyBossManager;
     public bool isDead;
     public bool isBoss;
     WorldEventManager worldEventManager;
 
+    public ParticleSystem damageFX;
     public UIEnemyHealthBar enemyHealthBar;
     [HideInInspector] public Animator anim;
 
@@ -42,6 +44,9 @@ public class EnemyStats : CharacterStats
 
     public void TakeDamage(int damage)
     {
+
+        Instantiate(damageFX, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
+        damageFX.Play();
 
         if (!isDead)
         {

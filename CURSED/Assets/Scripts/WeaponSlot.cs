@@ -35,7 +35,7 @@ public class WeaponSlot : MonoBehaviour
             UnloadWeapon();
             return;
         }
-        GameObject model = Instantiate(weaponItem.modelPrefab) as GameObject;
+        GameObject model = Instantiate(weaponItem.modelPrefab);
         if(model != null)
         {
             if(parentOverride != null)

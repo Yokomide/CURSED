@@ -307,7 +307,7 @@ namespace MainHero
 				stoneRest.mainCamera.SetActive(false);
 				stoneRest.StartRest();
 			}
-			if (vendor.isNearVendor)
+			if (vendor != null && vendor.isNearVendor)
 			{
 				vendor.tradeMenu.SetActive(true);
 				vendor.UIButtons.SetActive(false);

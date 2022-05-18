@@ -6,7 +6,7 @@ namespace MainHero
 {
     public class PlayerStats : CharacterStats
     {
-        public Vibrator vibrator;
+        //public Vibrator vibrator;
         public HealthBar healthBar;
         public StaminaBar staminaBar;
         public AnimatorManager animController;
@@ -77,7 +77,7 @@ namespace MainHero
 
                 animController.PlayTargetAnimation("Damage_01", true);
 
-                //Vibrator.Vibrate();
+                Vibrator.Vibrate();
                 float shakeIntensity = 5f;
                 camController.ShakeCamera(shakeIntensity, .1f);
 
