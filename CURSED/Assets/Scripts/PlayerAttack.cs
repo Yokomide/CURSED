@@ -42,6 +42,7 @@ namespace MainHero
                  //   playerStats.StaminaWaste(30);
                     animController.PlayTargetAnimation(weapon.OH_Light_Attack_3, true);
                 }
+
             }
         }
 

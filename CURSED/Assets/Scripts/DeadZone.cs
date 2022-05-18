@@ -9,7 +9,6 @@ public class DeadZone : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("”пал");
             other.gameObject.GetComponent<PlayerStats>().Death();
         }
     }

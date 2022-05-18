@@ -65,6 +65,8 @@ namespace MainHero
 		[Tooltip("For locking the camera position on all axis")]
 		public bool LockCameraPosition = false;
 
+		public StoneRest stoneRest;
+		public Vendor vendor;
 		// cinemachine
 		private float _cinemachineTargetYaw;
 		private float _cinemachineTargetPitch;
@@ -277,7 +279,6 @@ namespace MainHero
 			}
 		}
 
-
 	private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
 		{
 			if (lfAngle < -360f) lfAngle += 360f;
@@ -296,5 +297,23 @@ namespace MainHero
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
+
+		public void OnInteractButtonPressed()
+		{
+			if (stoneRest != null && stoneRest.isStoneRest)
+			{
+				stoneRest.restMenu.SetActive(true);
+				stoneRest.UIButtons.SetActive(false);
+				stoneRest.mainCamera.SetActive(false);
+				stoneRest.StartRest();
+			}
+			if (vendor.isNearVendor)
+			{
+				vendor.tradeMenu.SetActive(true);
+				vendor.UIButtons.SetActive(false);
+			}
+		}
+
 	}
+
 }

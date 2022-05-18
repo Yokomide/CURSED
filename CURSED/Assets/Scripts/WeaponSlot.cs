@@ -17,19 +17,19 @@ public class WeaponSlot : MonoBehaviour
             currentWeapon.SetActive(true);
         }
     }
-    //public void UnloadWeaponAndDestroy()
-    //{
-    //    if (currentWeapon != null)
-    //    {
-    //       Destroy(currentWeapon.gameObject);
-    //    }
+    public void UnloadWeaponAndDestroy()
+    {
+        if (currentWeapon != null)
+        {
+           Destroy(currentWeapon.gameObject);
+        }
 
-    //}
+    }
 
 
         public void LoadWeaponModel(WeaponItem weaponItem)
     {
-        //UnloadWeaponAndDestroy();
+        UnloadWeaponAndDestroy();
         if (weaponItem == null)
         {
             UnloadWeapon();

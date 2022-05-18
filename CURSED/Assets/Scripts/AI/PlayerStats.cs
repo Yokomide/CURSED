@@ -10,17 +10,18 @@ namespace MainHero
         public HealthBar healthBar;
         public StaminaBar staminaBar;
         public AnimatorManager animController;
-
+        public ParticleSystem bloodFX;
         public float staminaRegenerationAmount = 30;
         public float staminaRegenTimer = 0;
 
         [SerializeField]
-        private GameManager _gameManager;
+        private GameManager gm;
 
         private ThirdPersonController _controller;
         public bool isDead;
         void Start()
         {
+            gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
             _controller = GetComponent<ThirdPersonController>();
             animController = GetComponent<AnimatorManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
@@ -75,6 +76,10 @@ namespace MainHero
 
                 animController.PlayTargetAnimation("Damage_01", true);
 
+
+               Instantiate(bloodFX, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
+               bloodFX.Play();
+
                 if (currentHealth <= 0)
                 {
                     Death();
@@ -86,8 +91,7 @@ namespace MainHero
                 isDead = true;
                 currentHealth = 0;
                 animController.PlayTargetAnimation("Death_01", true);
-                _gameManager.EndGame();
-                
+                gm.EndGame();            
         }
     }
 }
