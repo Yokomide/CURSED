@@ -36,7 +36,7 @@ public class DamageCollider : MonoBehaviour
             if (playerStats != null)
             {
                 playerStats.TakeDamage(currentWeaponDamage);
-                damageFX.GetComponent<ParticleSystem>().Play();
+                //damageFX.GetComponent<ParticleSystem>().Play();
             }
         }
 

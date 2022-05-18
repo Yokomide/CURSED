@@ -6,11 +6,12 @@ namespace MainHero
 {
     public class PlayerStats : CharacterStats
     {
-        
+        public Vibrator vibrator;
         public HealthBar healthBar;
         public StaminaBar staminaBar;
         public AnimatorManager animController;
         public ParticleSystem bloodFX;
+        public ShakeCameras camController;
         public float staminaRegenerationAmount = 30;
         public float staminaRegenTimer = 0;
 
@@ -76,8 +77,11 @@ namespace MainHero
 
                 animController.PlayTargetAnimation("Damage_01", true);
 
+                //Vibrator.Vibrate();
+                float shakeIntensity = 5f;
+                camController.ShakeCamera(shakeIntensity, .1f);
 
-               Instantiate(bloodFX, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
+                Instantiate(bloodFX, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
                bloodFX.Play();
 
                 if (currentHealth <= 0)

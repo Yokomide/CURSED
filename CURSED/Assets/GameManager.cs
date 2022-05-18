@@ -38,8 +38,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Restart()
-    {
-        
+    {     
         LevelManager.Instance.LoadScene("Village");
         gameHasEnded = false;
 

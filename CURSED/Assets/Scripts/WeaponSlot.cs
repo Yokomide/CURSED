@@ -21,7 +21,7 @@ public class WeaponSlot : MonoBehaviour
     {
         if (currentWeapon != null)
         {
-           Destroy(currentWeapon.gameObject);
+          Destroy(currentWeapon);
         }
 
     }
