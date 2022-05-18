@@ -10,7 +10,7 @@ namespace MainHero
         public HealthBar healthBar;
         public StaminaBar staminaBar;
         public AnimatorManager animController;
-
+        public ParticleSystem bloodFX;
         public float staminaRegenerationAmount = 30;
         public float staminaRegenTimer = 0;
 
@@ -76,6 +76,10 @@ namespace MainHero
 
                 animController.PlayTargetAnimation("Damage_01", true);
 
+
+               Instantiate(bloodFX, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
+               bloodFX.Play();
+
                 if (currentHealth <= 0)
                 {
                     Death();
@@ -87,8 +91,7 @@ namespace MainHero
                 isDead = true;
                 currentHealth = 0;
                 animController.PlayTargetAnimation("Death_01", true);
-                gm.EndGame();
-                
+                gm.EndGame();            
         }
     }
 }
