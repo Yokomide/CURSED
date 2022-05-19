@@ -9,6 +9,7 @@ TagManager:
   - Item
   - Hittable
   - GM
+  - SM
   layers:
   - Default
   - TransparentFX

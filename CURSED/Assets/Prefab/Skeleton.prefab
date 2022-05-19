@@ -2266,11 +2266,16 @@ MonoBehaviour:
   staminaLevel: 10
   maxStamina: 0
   currentStamina: 0
+  manaLevel: 10
+  maxMana: 0
+  currentMana: 0
   isDead: 0
   isBoss: 0
+  pointsToDrop: 30
   damageFX: {fileID: 3449156659046744991, guid: e95a82e2532aeec418127b8f9740da75,
     type: 3}
   enemyHealthBar: {fileID: 8105900463965323170}
+  statsManager: {fileID: 0}
   anim: {fileID: 0}
 --- !u!114 &1659832044759972974
 MonoBehaviour:

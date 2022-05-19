@@ -11,9 +11,12 @@ public class EnemyStats : CharacterStats
     public bool isDead;
     public bool isBoss;
     WorldEventManager worldEventManager;
+    public int pointsToDrop;
 
     public ParticleSystem damageFX;
     public UIEnemyHealthBar enemyHealthBar;
+    public StatsManager statsManager;
+
     [HideInInspector] public Animator anim;
 
     private void Awake()
@@ -25,6 +28,7 @@ public class EnemyStats : CharacterStats
     }
     void Start()
     {
+        statsManager = GameObject.FindGameObjectWithTag("SM").GetComponent<StatsManager>();
         anim = GetComponent<Animator>();
         if (!isBoss)
         {
@@ -93,6 +97,7 @@ public class EnemyStats : CharacterStats
             worldEventManager.BossHasBeenDefeated();
         }
         anim.Play("Death_01");
+        statsManager.GetPoints(pointsToDrop);
     }
 }
 
