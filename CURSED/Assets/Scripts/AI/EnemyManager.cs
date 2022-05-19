@@ -5,14 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyManager : CharacterManager
 {
-    EnemyLocomotionManager enemyLocomotionManager;
-    EnemyAnimatorManager enemyAnimatorManager;
-    EnemyStats enemyStats;
+    [HideInInspector]EnemyLocomotionManager enemyLocomotionManager;
+    [HideInInspector] EnemyAnimatorManager enemyAnimatorManager;
+    [HideInInspector] EnemyStats enemyStats;
 
     public State currentState;
     public CharacterStats currentTarget;
-    public NavMeshAgent navMeshAgent;
-    public Rigidbody enemyRigidBody;
+    [HideInInspector] public NavMeshAgent navMeshAgent;
+    [HideInInspector] public Rigidbody enemyRigidBody;
 
     public bool isPreformingAction;
     public bool isInteracting;
