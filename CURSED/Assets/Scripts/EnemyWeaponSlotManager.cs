@@ -48,13 +48,11 @@ public class EnemyWeaponSlotManager : MonoBehaviour
     {
         if (isLeft)
         {
-            leftHandSlot.currentWeapon = weapon.modelPrefab;
             leftHandSlot.LoadWeaponModel(weapon);
             LoadWeaponDamageCollider(true);
         }
         else
         {
-            rightHandSlot.currentWeapon = weapon.modelPrefab;
             rightHandSlot.LoadWeaponModel(weapon);
             LoadWeaponDamageCollider(false);
         }

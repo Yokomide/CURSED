@@ -21,7 +21,7 @@ public class WeaponSlot : MonoBehaviour
     {
         if (currentWeapon != null)
         {
-           Destroy(currentWeapon.gameObject);
+          Destroy(currentWeapon);
         }
 
     }
@@ -35,7 +35,7 @@ public class WeaponSlot : MonoBehaviour
             UnloadWeapon();
             return;
         }
-        GameObject model = Instantiate(weaponItem.modelPrefab) as GameObject;
+        GameObject model = Instantiate(weaponItem.modelPrefab);
         if(model != null)
         {
             if(parentOverride != null)

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using MainHero;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     }
     private void Start()
-    {
+    {  
         LevelManager.Instance.GetComponentInChildren<Settings>().PostProcessState();
     }
     public void EndGame()
@@ -38,8 +39,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Restart()
-    {
-        
+    {     
         LevelManager.Instance.LoadScene("Village");
         gameHasEnded = false;
 

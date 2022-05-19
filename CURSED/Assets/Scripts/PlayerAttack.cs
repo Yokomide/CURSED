@@ -1,20 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace MainHero
 {
     public class PlayerAttack : MonoBehaviour
     {
-        public AnimatorManager animController;
-        public ThirdPersonController controller;
+       [HideInInspector] public AnimatorManager animController;
+       [HideInInspector] public ThirdPersonController controller;
 
         public string lastAttack;
         public bool comboFlag;
 
         private PlayerStats playerStats;
         private PlayerInventory playerInventory;
+
+        public GameObject skill;
+        public Button SpellButton;
 
         private void Start()
         {
@@ -46,6 +50,29 @@ namespace MainHero
             }
         }
 
+        public void SpellButtonPressed()
+        {
+            if (playerStats.currentStamina < 30) return;
+
+            else
+            {
+                animController.PlayTargetAnimation("CastSpell", true);
+            }       
+        }
+        public void CastSpell()
+        {
+            if (playerStats.currentMana < 20) return;
+            {
+                Instantiate(skill, transform.position, transform.rotation);
+                SpellButton.interactable = false;
+                StartCoroutine(CoolDown());
+            }
+        }
+        IEnumerator CoolDown()
+        {
+            yield return new WaitForSeconds(6f);
+            SpellButton.interactable = true;  
+        }
         public void LightAttackButtonPressed()
         {
             if (playerStats.currentStamina < 20) return;
