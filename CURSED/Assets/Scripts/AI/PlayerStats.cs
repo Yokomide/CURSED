@@ -9,11 +9,14 @@ namespace MainHero
         //public Vibrator vibrator;
         public HealthBar healthBar;
         public StaminaBar staminaBar;
+        public ManaBar manaBar;
         public AnimatorManager animController;
         public ParticleSystem bloodFX;
         public ShakeCameras camController;
         public float staminaRegenerationAmount = 30;
         public float staminaRegenTimer = 0;
+
+        public int bloodPoints;
 
         [SerializeField]
         private GameManager gm;
@@ -27,10 +30,18 @@ namespace MainHero
             animController = GetComponent<AnimatorManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
             maxStamina = SetMaxStaminaFromStaminaLevel();
+            maxMana = SetMaxManaFromManaLevel();
             currentStamina = maxStamina;
             currentHealth = maxHealth;
+            currentMana = maxHealth;
             staminaBar.SetMaxStamina(maxStamina);
             healthBar.SetMaxHealth(maxHealth);
+            manaBar.SetMaxMana(maxMana);
+            GameObject playerStats = GameObject.Find("Character");
+            if (playerStats != null)
+            {
+                playerStats.GetComponent<PlayerStats>().LoadPlayer();
+            }
         }
 
         private float SetMaxStaminaFromStaminaLevel()
@@ -43,11 +54,21 @@ namespace MainHero
             maxHealth = healthLevel * 10;
             return maxHealth;
         }
-
+        private int SetMaxManaFromManaLevel()
+        {
+            maxMana = manaLevel * 10;
+            return maxMana;
+        }
         public void StaminaWaste(int action)
         {
             currentStamina -= action;
             staminaBar.SetCurrentStamina(currentStamina);
+        }
+
+        public void ManaWaste(int action)
+        {
+            currentMana -= action;
+            manaBar.SetCurrentMana(currentMana);
         }
 
         public void RegenerateStamina()
@@ -77,7 +98,7 @@ namespace MainHero
 
                 animController.PlayTargetAnimation("Damage_01", true);
 
-                Vibrator.Vibrate();
+               // Vibrator.Vibrate();
                 float shakeIntensity = 5f;
                 camController.ShakeCamera(shakeIntensity, .1f);
 
@@ -95,7 +116,23 @@ namespace MainHero
                 isDead = true;
                 currentHealth = 0;
                 animController.PlayTargetAnimation("Death_01", true);
+            SavePlayer();
                 gm.EndGame();            
+        }
+        public void SavePlayer()
+        {
+            SaveSystem.SavePlayer(this);
+        }
+
+        public void LoadPlayer()
+        {
+            PlayerData data = SaveSystem.LoadPlayer();
+
+            maxHealth = data.maxHp;
+            maxMana = data.maxMana;
+            maxStamina = data.maxStamina;
+
+            bloodPoints = data.bloodPoints;
         }
     }
 }
