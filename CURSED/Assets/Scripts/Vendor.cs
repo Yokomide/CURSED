@@ -11,6 +11,8 @@ public class Vendor : MonoBehaviour
     public GameObject tradeMenu;
     public GameObject errorMenu;
     public StatsManager statsManager;
+    public GameObject axeCheck;
+    public GameObject spearCheck;
 
     [SerializeField]
     private GameObject mainCharacter;
@@ -53,10 +55,11 @@ public class Vendor : MonoBehaviour
             statsManager.GetPoints(-150);
             mainCharacter.GetComponent<PlayerInventory>().addAxe();
             mainCharacter.GetComponent<PlayerInventory>().CheckWeaponInventory();
+            axeCheck.SetActive(true);
         }
         else
         {
-            CloseError();
+            errorMenu.SetActive(true);
         }
     }
 
@@ -67,10 +70,11 @@ public class Vendor : MonoBehaviour
             statsManager.GetPoints(-250);
             mainCharacter.GetComponent<PlayerInventory>().addSpear();
             mainCharacter.GetComponent<PlayerInventory>().CheckWeaponInventory();
+            spearCheck.SetActive(true);
         }
         else
         {
-            CloseError();
+            errorMenu.SetActive(true);
         }
     }
 
