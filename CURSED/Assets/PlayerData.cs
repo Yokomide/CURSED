@@ -22,7 +22,7 @@ public class PlayerData
         maxHp = player.maxHealth;
         maxStamina = player.maxStamina;
         maxMana = player.maxMana;
-        bloodPoints= player.bloodPoints;
+        //bloodPoints= points.bloodPoints;
     }
 
 }

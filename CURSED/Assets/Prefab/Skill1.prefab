@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   damageFX: {fileID: 0}
-  currentSkillDamage: 40
+  currentSkillDamage: 50
 --- !u!135 &2742111160103967120
 SphereCollider:
   m_ObjectHideFlags: 0

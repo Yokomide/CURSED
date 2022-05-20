@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 514002619727369571}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 33.16, y: 0.5, z: -22.49}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 6110749481903717570}
   - {fileID: 6110581642388850958}
@@ -56,7 +56,7 @@ Animator:
   m_GameObject: {fileID: 514002619727369571}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a50cd06a0668d1a418d586a2944e3ed5, type: 3}
-  m_Controller: {fileID: 9100000, guid: 65157939d4bfa4a4ca60d36d03d4a453, type: 2}
+  m_Controller: {fileID: 9100000, guid: f4dbdca248f8a0e4da1bd3f2ad0999e4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -75,10 +75,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.8525895
+  m_Radius: 0.21429777
+  m_Height: 1.5571685
   m_Direction: 1
-  m_Center: {x: 0, y: 0.87999195, z: 0}
+  m_Center: {x: 0.003127575, y: 0.82495046, z: 0}
 --- !u!54 &514002619727369592
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -123,9 +123,9 @@ MonoBehaviour:
   isPreformingAction: 0
   isInteracting: 0
   rotationSpeed: 25
-  maximumAttackRange: 2.5
+  maximumAttackRange: 5
   distanceFromTarget: 0
-  canDoCombo: 0
+  canDoCombo: 1
   detectionRadius: 7
   maximumDetectionAngle: 60
   minimumDetectionAngle: -60
@@ -190,9 +190,15 @@ MonoBehaviour:
   staminaLevel: 10
   maxStamina: 0
   currentStamina: 0
+  manaLevel: 10
+  maxMana: 0
+  currentMana: 0
   isDead: 0
   isBoss: 0
+  pointsToDrop: 0
+  damageFX: {fileID: 0}
   enemyHealthBar: {fileID: 4588943501645109655}
+  statsManager: {fileID: 0}
   anim: {fileID: 0}
 --- !u!114 &514002619727369570
 MonoBehaviour:
@@ -299,8 +305,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 4588943501471352718}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.38
-  m_Speed: 3.5
+  m_Radius: 0.22
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -722,10 +728,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.845696
+  m_Radius: 0.23256302
+  m_Height: 1.3509493
   m_Direction: 1
-  m_Center: {x: 0, y: 0.8805438, z: 0}
+  m_Center: {x: 0.01366806, y: 0.730525, z: 0}
 --- !u!1 &4588943502060807156
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,8 +896,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackState: {fileID: 4588943502375089466}
   enemyAttacks:
-  - {fileID: 11400000, guid: 65e9d01f19f56f34c9ffd72362c20045, type: 2}
-  - {fileID: 11400000, guid: 9a0e7a3b712bd1848888b4cf11f5ec09, type: 2}
+  - {fileID: 11400000, guid: bb6d6777c1bcea14f86649e579e41d36, type: 2}
+  - {fileID: 11400000, guid: 7661cedb95b113f499a4538e58c99706, type: 2}
+  - {fileID: 11400000, guid: 3cc65ec3902cbd447942dae191aa1a6c, type: 2}
   pursueTargetState: {fileID: 4588943501609805435}
 --- !u!1 &4588943502375089467
 GameObject:

@@ -23,9 +23,11 @@ namespace MainHero
 
         private ThirdPersonController _controller;
         public bool isDead;
+        public StatsManager statsManager;
         void Start()
         {
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+            statsManager = GameObject.FindGameObjectWithTag("SM").GetComponent<StatsManager>();
             _controller = GetComponent<ThirdPersonController>();
             animController = GetComponent<AnimatorManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
@@ -40,7 +42,9 @@ namespace MainHero
             GameObject playerStats = GameObject.Find("Character");
             if (playerStats != null)
             {
+                statsManager.GetPoints(0);
                 playerStats.GetComponent<PlayerStats>().LoadPlayer();
+                
             }
         }
 

@@ -79,8 +79,10 @@ public class StoneRest : MonoBehaviour
     {
         playerStats.currentHealth = playerStats.maxHealth;
         playerStats.currentStamina = playerStats.maxStamina;
+        playerStats.currentMana = playerStats.maxMana;
         playerStats.healthBar.SetCurrentHealth(playerStats.currentHealth);
         playerStats.staminaBar.SetCurrentStamina(playerStats.currentStamina);
+        playerStats.manaBar.SetCurrentMana(playerStats.currentMana);
     }
     public void EndRest()
     {

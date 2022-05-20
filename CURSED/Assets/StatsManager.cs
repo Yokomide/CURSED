@@ -22,12 +22,12 @@ public class StatsManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
 
     public void GetPoints(int a)
     {
+        blood = GameObject.Find("Blood").GetComponent<TextMeshProUGUI>();
         bloodPoints += a;
         blood.text = bloodPoints.ToString();
     }
