@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     void Restart()
     {     
-        LevelManager.Instance.LoadScene("Village");
+        LevelManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
         gameHasEnded = false;
 
     }

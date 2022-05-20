@@ -34,7 +34,10 @@ public class WorldEventManager : MonoBehaviour
         bossHasBeenDefeated = true;
         bossFightIsActive = false;
         bossHealthBar.SetUIHealthBarToInactive();
-        Teleport.SetActive(true);
+        if (Teleport != null)
+        {
+            Teleport.SetActive(true);
+        }
 
         foreach (var FogWall in fogWalls)
         {

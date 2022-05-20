@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4455104685363834381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4455104685363834368}
+  - component: {fileID: 4455104685363834382}
+  - component: {fileID: 4455104685363834383}
+  m_Layer: 0
+  m_Name: BossZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4455104685363834368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455104685363834381}
+  m_LocalRotation: {x: -0, y: -0.8829662, z: -0, w: 0.4694365}
+  m_LocalPosition: {x: 29.9, y: 4.73, z: 14.45}
+  m_LocalScale: {x: 1, y: 1, z: 1.1286601}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -124.005, z: 0}
+--- !u!114 &4455104685363834382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455104685363834381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf82271ef6530c42a87a999bdccf774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldEventManager: {fileID: 0}
+  player: {fileID: 0}
+  camera: {fileID: 0}
+  UI: {fileID: 0}
+  CutScene: {fileID: 0}
+  AudioManager: {fileID: 0}
+  BossFight: {fileID: 8300000, guid: 81de5864e2aa1b8409bbad76511a6ce6, type: 3}
+--- !u!65 &4455104685363834383
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455104685363834381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 5.2147675, z: 7.7453885}
+  m_Center: {x: 0.00003465557, y: 2.1073751, z: -3.0777}

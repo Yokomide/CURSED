@@ -25,9 +25,10 @@ public class EventColliderBeginBossFight : MonoBehaviour
             if (!worldEventManager.bossHasBeenDefeated && other.tag == "Player")
             {
                 worldEventManager.ActivateBossFight();
-
-                CutScene.SetActive(true);
-
+                if (CutScene != null)
+                {
+                    CutScene.SetActive(true);
+                }
                 AudioManager.GetComponent<AudioSource>().clip = BossFight;
                 AudioManager.GetComponent<AudioSource>().Play();
             }

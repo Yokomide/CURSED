@@ -44,6 +44,7 @@ namespace MainHero
             GameObject playerStats = GameObject.Find("Character");
             if (playerStats != null)
             {
+                statsManager.GetFlask(0);
                 statsManager.GetPoints(0);
                 playerStats.GetComponent<PlayerStats>().LoadPlayer();
                 
@@ -104,7 +105,7 @@ namespace MainHero
 
                 animController.PlayTargetAnimation("Damage_01", true);
 
-                //Vibrator.Vibrate();
+                Vibrator.Vibrate();
                 float shakeIntensity = 5f;
                 camController.ShakeCamera(shakeIntensity, .1f);
                 hitSound.PlayHit();
