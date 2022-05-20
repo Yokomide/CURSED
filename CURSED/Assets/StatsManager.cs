@@ -8,8 +8,10 @@ public class StatsManager : MonoBehaviour
     private static StatsManager instance;
 
     public int bloodPoints;
+    public int flaskPoints;
 
     public TextMeshProUGUI blood;
+    public TextMeshProUGUI flask;
 
     private void Awake()
     {
@@ -30,5 +32,12 @@ public class StatsManager : MonoBehaviour
         blood = GameObject.Find("Blood").GetComponent<TextMeshProUGUI>();
         bloodPoints += a;
         blood.text = bloodPoints.ToString();
+    }
+
+    public void GetFlask(int a)
+    {
+        flask = GameObject.Find("Flask").GetComponent<TextMeshProUGUI>();
+        flaskPoints += a;
+        flask.text = flaskPoints.ToString();
     }
 }
