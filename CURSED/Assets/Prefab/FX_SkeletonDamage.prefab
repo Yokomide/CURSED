@@ -4809,6 +4809,7 @@ GameObject:
   - component: {fileID: 3449156659028403573}
   - component: {fileID: 3449156659046744991}
   - component: {fileID: 3449156659047924059}
+  - component: {fileID: -4203493144367534821}
   m_Layer: 0
   m_Name: FX_SkeletonDamage
   m_TagString: Untagged
@@ -9597,3 +9598,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-4203493144367534821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449156659028143451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 997ab276b9ba1464a8e1ce897ebb7ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0.5

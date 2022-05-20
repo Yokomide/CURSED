@@ -5,7 +5,7 @@ public class HitSound : MonoBehaviour
     [SerializeField]
     private AudioClip[] hitClips;
     [SerializeField]
-    private AudioClip[] monsterClips;
+    private AudioClip monsterClips;
     private AudioSource audioSource;
     private TerrainDetector terrainDetector;
 
@@ -36,7 +36,7 @@ public class HitSound : MonoBehaviour
     void RandomSoundness()
     {
         //AudioClip clip = monsterClips[UnityEngine.Random.Range(0, monsterClips.Length)];
-        AudioClip clip = monsterClips[0];
+        AudioClip clip = monsterClips;
         audioSource.PlayOneShot(clip);
         CallAudio();
     }

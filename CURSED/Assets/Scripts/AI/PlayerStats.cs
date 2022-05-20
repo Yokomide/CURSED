@@ -104,7 +104,7 @@ namespace MainHero
 
                 animController.PlayTargetAnimation("Damage_01", true);
 
-               // Vibrator.Vibrate();
+                //Vibrator.Vibrate();
                 float shakeIntensity = 5f;
                 camController.ShakeCamera(shakeIntensity, .1f);
                 hitSound.PlayHit();

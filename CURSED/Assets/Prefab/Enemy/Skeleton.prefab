@@ -2292,7 +2292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36e37850c20ea74c9c032dee6088910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightHandWeapon: {fileID: 11400000, guid: 1cc13b2d18cc6ae449490211f88c9739, type: 2}
+  rightHandWeapon: {fileID: 11400000, guid: d3f564ed27a963d4bbf6d8ef175b79a4, type: 2}
   leftHandWeapon: {fileID: 11400000, guid: 1cc13b2d18cc6ae449490211f88c9739, type: 2}
 --- !u!114 &1972004268709704824
 MonoBehaviour:
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   hitClips:
   - {fileID: 8300000, guid: 28ae25004352d5745811e743c98d9c2a, type: 3}
   - {fileID: 8300000, guid: bd88d683b18a69642b4845e645be4c64, type: 3}
-  monsterClips: []
+  monsterClips: {fileID: 0}
 --- !u!82 &7484061561986482889
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2353,8 +2353,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.771
-  m_Pitch: 1
+  m_Volume: 0.704
+  m_Pitch: 0.94
   Loop: 0
   Mute: 0
   Spatialize: 0

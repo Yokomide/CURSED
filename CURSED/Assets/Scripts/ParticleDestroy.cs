@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellDestroy : MonoBehaviour
+public class ParticleDestroy : MonoBehaviour
 {
     public float timer = 1.5f;
 

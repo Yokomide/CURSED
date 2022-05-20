@@ -2794,6 +2794,8 @@ GameObject:
   - component: {fileID: 7715473243196624464}
   - component: {fileID: 7715473243196624465}
   - component: {fileID: 7715473243196624470}
+  - component: {fileID: 4862982756577219728}
+  - component: {fileID: 1375527544938597281}
   m_Layer: 7
   m_Name: Character
   m_TagString: Player
@@ -3028,6 +3030,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   lastAttack: 
   comboFlag: 0
+  skill: {fileID: 0}
+  SpellButton: {fileID: 0}
 --- !u!114 &7715473243196624479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3046,6 +3050,9 @@ MonoBehaviour:
   staminaLevel: 10
   maxStamina: 0
   currentStamina: 0
+  manaLevel: 10
+  maxMana: 0
+  currentMana: 0
 --- !u!114 &7715473243196624477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3100,13 +3107,22 @@ MonoBehaviour:
   staminaLevel: 10
   maxStamina: 0
   currentStamina: 0
+  manaLevel: 10
+  maxMana: 0
+  currentMana: 0
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
+  manaBar: {fileID: 0}
   animController: {fileID: 0}
+  bloodFX: {fileID: 0}
+  camController: {fileID: 0}
   staminaRegenerationAmount: 10
   staminaRegenTimer: 0
-  _gameManager: {fileID: 0}
+  bloodPoints: 0
+  gm: {fileID: 0}
   isDead: 0
+  statsManager: {fileID: 0}
+  hitSound: {fileID: 0}
 --- !u!114 &7715473243196624465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3216,6 +3232,40 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4862982756577219728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715473243196624473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b7ab6f6a01d4d34c814c324551b5793, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitClips:
+  - {fileID: 8300000, guid: ed4c313a5e140a547922d17524b0ba83, type: 3}
+  monsterClips: {fileID: 0}
+--- !u!114 &1375527544938597281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7715473243196624473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132f88903ab7a6243bed5b73c8ba6bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stoneClips: []
+  mudClips: []
+  grassClips:
+  - {fileID: 8300000, guid: 9a30499e47789df48aa9bdb1ec7b0982, type: 3}
+  - {fileID: 8300000, guid: 1d7e7e6569aab5a45a837f470eaddc8b, type: 3}
+  - {fileID: 8300000, guid: 31be579b280d0bc459635877e8c45aee, type: 3}
+  - {fileID: 8300000, guid: c3f3efc1106f84643a38bd21f6826aaf, type: 3}
 --- !u!1001 &6223636962100209344
 PrefabInstance:
   m_ObjectHideFlags: 0
