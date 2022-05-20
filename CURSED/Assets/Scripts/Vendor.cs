@@ -80,7 +80,15 @@ public class Vendor : MonoBehaviour
 
     public void BuyFlask()
     {
-
+        if (statsManager.bloodPoints >= 50)
+        {
+            statsManager.GetPoints(-50);
+            statsManager.GetFlask(1);
+        }
+        else
+        {
+            errorMenu.SetActive(true);
+        }
     }
 
     public void BuySpell()
