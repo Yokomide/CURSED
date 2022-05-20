@@ -24,12 +24,14 @@ namespace MainHero
         private ThirdPersonController _controller;
         public bool isDead;
         public StatsManager statsManager;
+        public HitSound hitSound;
         void Start()
         {
             gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
             statsManager = GameObject.FindGameObjectWithTag("SM").GetComponent<StatsManager>();
             _controller = GetComponent<ThirdPersonController>();
             animController = GetComponent<AnimatorManager>();
+            hitSound = GetComponent<HitSound>();
             maxHealth = SetMaxHealthFromHealthLevel();
             maxStamina = SetMaxStaminaFromStaminaLevel();
             maxMana = SetMaxManaFromManaLevel();
@@ -105,7 +107,7 @@ namespace MainHero
                // Vibrator.Vibrate();
                 float shakeIntensity = 5f;
                 camController.ShakeCamera(shakeIntensity, .1f);
-
+                hitSound.PlayHit();
                 Instantiate(bloodFX, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
                bloodFX.Play();
 

@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Village.unity
     guid: 945e1520024a0c74090e803184a58a42
+  - enabled: 1
+    path: Assets/Scenes/Swamp.unity
+    guid: 50eb3c80f4ab42f4fb7993ea018a52a4
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 1fb8a8cc1a129e2448510f60518b71ec,
       type: 2}

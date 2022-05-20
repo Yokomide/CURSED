@@ -5,8 +5,10 @@ using UnityEngine;
 public class WorldEventManager : MonoBehaviour
 {
     public List<FogWall> fogWalls;
+    public GameObject Teleport;
     public UIBossHealthBar bossHealthBar;
     public EnemyBossManager boss;
+
 
     public bool bossFightIsActive;
     public bool bossHasBeenAwakened;
@@ -28,9 +30,11 @@ public class WorldEventManager : MonoBehaviour
     }
     public void BossHasBeenDefeated()
     {
+        
         bossHasBeenDefeated = true;
         bossFightIsActive = false;
         bossHealthBar.SetUIHealthBarToInactive();
+        Teleport.SetActive(true);
 
         foreach (var FogWall in fogWalls)
         {

@@ -17,6 +17,7 @@ public class EnemyStats : CharacterStats
     public UIEnemyHealthBar enemyHealthBar;
     public StatsManager statsManager;
 
+    public HitSound hitSound;
     [HideInInspector] public Animator anim;
 
     private void Awake()
@@ -30,6 +31,7 @@ public class EnemyStats : CharacterStats
     {
         statsManager = GameObject.FindGameObjectWithTag("SM").GetComponent<StatsManager>();
         anim = GetComponent<Animator>();
+        hitSound = GetComponent<HitSound>();
         if (!isBoss)
         {
             enemyHealthBar.SetMaxHealth(maxHealth);
@@ -51,7 +53,7 @@ public class EnemyStats : CharacterStats
 
         Instantiate(damageFX, new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z), Quaternion.identity);
         damageFX.Play();
-
+        hitSound.PlayHit();
         if (!isDead)
         {
             currentHealth = currentHealth - damage;
